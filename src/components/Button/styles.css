@@ -1,0 +1,34 @@
+.button {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1), inset 0px -3px 0px rgba(0, 0, 0, 0.15);
+}
+.button:hover{
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1), inset 0px -3px 0px rgba(0, 0, 0, 0.15),inset 0px 150px 0px 0px rgba(0,0,0,0.15);
+}
+.button:active, .active{
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.1), inset 0px 3px 0px rgba(0, 0, 0, 0.15),inset 0px 150px 0px 0px rgba(0,0,0,0.15);
+}
+/* Styles */
+#default{
+    background: #00AFBB;
+}
+#dark{
+    background: #028089;
+}
+#guide{
+    background: #627391;
+}
+#footer{
+    background: #353535;
+    padding: 10px 15px;
+    border-radius: 5px 5px 0 0;
+}
