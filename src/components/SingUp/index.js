@@ -1,8 +1,10 @@
 import './styles.css';
-import React from 'react'
-import { Form } from '@unform/web'
-import Input from '../Input'
+
+import { Form } from '@unform/web';
+import React from 'react';
+
 import Button from '../Button';
+import Input from '../Input';
 
 export default function SingIn() {
 
@@ -13,6 +15,10 @@ export default function SingIn() {
 
     return (
         <Form className='form' onSubmit={handleSubmit}>
+            <div className='form-group'>
+                <label>Nome</label>
+                <Input name="nome" className='input'/>
+            </div>
             <div className='form-group'>
                 <label>E-mail</label>
                 <Input name="email" type="email" className='input'/>

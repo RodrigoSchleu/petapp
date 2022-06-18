@@ -1,6 +1,9 @@
 import '../sidebar/Sidebar.css';
-import Button from '../Button'
+
+import { Link } from 'react-router-dom';
+
 import logo from '../../assets/avatar.png';
+import Button from '../Button';
 
 const Sidebar = ({ sidebarOpen, closeSidebar }) => {
     return (
@@ -15,14 +18,13 @@ const Sidebar = ({ sidebarOpen, closeSidebar }) => {
             </div>
             <div className='sidebar__area'>
                 <div className="sidebar__menu">
-                    <a><Button styleType='dark' active={true}>Home</Button></a>
-                    <a><Button styleType='dark'>Perfil Pet</Button></a>
-                    <a><Button styleType='dark'>Histórico de serviçoos</Button></a>
-                    <a><Button styleType='dark'></Button></a>
+                    <a><Link to="/"><Button styleType='dark' active={true}>Home</Button></Link></a>
+                    <a><Link to="profile"><Button styleType='dark'>Perfil</Button></Link></a>
+                    <a><Link to="profilePet"><Button styleType='dark'>Perfil Pet</Button></Link></a>
+                    <a><Link to="historic"><Button styleType='dark'>Histórico de serviçoos</Button></Link></a>
                 </div>
             </div>
             <div className='sidebar__footer'>
-                <a><Button styleType='guide'>Guia do Usuário</Button></a>
                 <div className='footer__line' />
                 <a><Button styleType='footer'>Sair</Button></a>
             </div>
