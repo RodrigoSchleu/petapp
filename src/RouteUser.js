@@ -26,8 +26,8 @@ function RouteUser() {
             <Route path="/" element={<Main />} />
             <Route path="profile" element={<Profile />}/>
             <Route path="profile/editProfile" element={<EditProfile />}/>
-            <Route path="editPet" element={<Main/>} />
-            <Route path="historico" element={<EditProfile />} />
+            <Route path="profilePet" element={<Main/>} />
+            <Route path="historic" element={<EditProfile />} />
           </Route>
         </Routes>
         <Sidebar sidebarOpen={sidebarOpen} closeSidebar={closeSidebar}/>

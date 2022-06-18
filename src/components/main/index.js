@@ -1,19 +1,20 @@
 import './styles.css';
-import banner from '../../assets/banner.png';
+
 import { useState } from 'react';
+
+import banner from '../../assets/banner.png';
 import caoputo from '../../assets/caoputo.png';
 import vetpet from '../../assets/vetpet.png';
 
 const Main = () => {
-    const [servicosDisponiveis,setServicosDisponiveis] = useState([
-        {nomeUsuario:"Roger",tipo:"Passeios"},
-        {nomeUsuario:"João",tipo:"Adestramento Cão Puto"},
-        {nomeUsuario:"Dog House 4.0",tipo:"Hotel"},
-        {nomeUsuario:"Hostel Pet",tipo:"Hospital Veterinário"},
-        {nomeUsuario:"Maria",tipo:"Cuidados da titia"}
-        
-    ]);
     const [servicosContratados,setServicosContratados] = useState([
+        {nomeUsuario:"Roger",tipo:"Passeios",data:"17/06 - 10:00"},
+        {nomeUsuario:"João",tipo:"Adestramento Cão Puto",data:"20/06 - 10:00"},
+        {nomeUsuario:"Dog House 4.0",tipo:"Hotel",data:"17/06 - 10:00"},
+        {nomeUsuario:"Hostel Pet",tipo:"Hospital Veterinário",data:"17/06 - 10:00"},
+        {nomeUsuario:"Maria",tipo:"Cuidados da titia",data:"17/06 - 10:00"} 
+    ]);
+    const [servicosDisponiveis,setServicosDisponiveis] = useState([
         {nomeUsuario:"Paulo",tipo:"Passeios"},
         {nomeUsuario:"Marcelo",tipo:"Adestramento Cão Puto"},
         {nomeUsuario:"Cantinho feliz",tipo:"Hotel"},
@@ -33,7 +34,7 @@ const Main = () => {
                             Últimos Agendamentos
                         </div>
                         <div className='space_services'>
-                            {servicosDisponiveis.map((a, i) => {
+                            {servicosContratados.map((a, i) => {
                                 var icone;
                                 var descricao;
                                 var color;
@@ -71,7 +72,7 @@ const Main = () => {
                                         </div>
                                         <div className='box-info'>
                                             <div className='box-title'>{descricao}</div>
-                                            <div className='box-date'>31/10 - 12:30</div>
+                                            <div className='box-date'>{a.data}</div>
                                         </div>
                                     </div>
                                 );

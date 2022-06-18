@@ -20,11 +20,12 @@ const Sidebar = ({ sidebarOpen, closeSidebar }) => {
                 <div className="sidebar__menu">
                     <a><Link to="/"><Button styleType='dark' active={true}>Home</Button></Link></a>
                     <a><Link to="profile"><Button styleType='dark'>Perfil</Button></Link></a>
-                    <a><Link to="editPet"><Button styleType='dark'>Perfil Pet</Button></Link></a>
-                    <a><Link to="historico"><Button styleType='dark'>Histórico de serviçoos</Button></Link></a>
+                    <a><Link to="profilePet"><Button styleType='dark'>Perfil Pet</Button></Link></a>
+                    <a><Link to="historic"><Button styleType='dark'>Histórico de serviçoos</Button></Link></a>
                 </div>
             </div>
             <div className='sidebar__footer'>
+                <div className='footer__line' />
                 <a><Button styleType='footer'>Sair</Button></a>
             </div>
         </section>
