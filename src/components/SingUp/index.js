@@ -24,6 +24,13 @@ export default function SingIn() {
                     <label>Sobrenome</label>
                     <Input name="sobrenome" type="text" className='input' />
                 </div>
+            <div className='form-group'>
+                <label>Nome</label>
+                <Input name="nome" className='input'/>
+            </div>
+            <div className='form-group'>
+                <label>E-mail</label>
+                <Input name="email" type="email" className='input'/>
             </div>
             <div className='line'>
                 <div className='form-group'>

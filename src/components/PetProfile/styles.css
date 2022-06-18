@@ -2,23 +2,6 @@
     display: none;
 }
 
-.tc_content {
-    flex: auto;
-}
-
-.type_content {
-    padding: 10px 30px;
-
-}
-.type {
-    font-size: 20px;
-    line-height: 30px;
-}
-
-.content {
-    padding-top: 5px;
-    
-}
 
 
 .main__container {
