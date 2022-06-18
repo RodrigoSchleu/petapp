@@ -2,32 +2,36 @@ import './styles.css';
 
 import { useState } from 'react';
 
+import { Link } from 'react-router-dom';
+
 import banner from '../../assets/banner.png';
 import caoputo from '../../assets/caoputo.png';
 import vetpet from '../../assets/vetpet.png';
 
+import Banner from '../Banner';
+
 const Main = () => {
-    const [servicosContratados,setServicosContratados] = useState([
-        {nomeUsuario:"Roger",tipo:"Passeios",data:"17/06 - 10:00"},
-        {nomeUsuario:"João",tipo:"Adestramento Cão Puto",data:"20/06 - 10:00"},
-        {nomeUsuario:"Dog House 4.0",tipo:"Hotel",data:"17/06 - 10:00"},
-        {nomeUsuario:"Hostel Pet",tipo:"Hospital Veterinário",data:"17/06 - 10:00"},
-        {nomeUsuario:"Maria",tipo:"Cuidados da titia",data:"17/06 - 10:00"} 
+    const [servicosContratados, setServicosContratados] = useState([
+        { nomeUsuario: "Roger", tipo: "Passeios", data: "17/06 - 10:00" },
+        { nomeUsuario: "João", tipo: "Adestramento Cão Puto", data: "20/06 - 10:00" },
+        { nomeUsuario: "Dog House 4.0", tipo: "Hotel", data: "17/06 - 10:00" },
+        { nomeUsuario: "Hostel Pet", tipo: "Hospital Veterinário", data: "17/06 - 10:00" },
+        { nomeUsuario: "Maria", tipo: "Cuidados da titia", data: "17/06 - 10:00" }
     ]);
-    const [servicosDisponiveis,setServicosDisponiveis] = useState([
-        {nomeUsuario:"Paulo",tipo:"Passeios"},
-        {nomeUsuario:"Marcelo",tipo:"Adestramento Cão Puto"},
-        {nomeUsuario:"Cantinho feliz",tipo:"Hotel"},
-        {nomeUsuario:"AMEPET",tipo:"Hospital Veterinário"},
-        {nomeUsuario:"Marcia",tipo:"Cuidados da titia"}
+    const [servicosDisponiveis, setServicosDisponiveis] = useState([
+        { nomeUsuario: "Paulo", tipo: "Passeios" },
+        { nomeUsuario: "Marcelo", tipo: "Adestramento Cão Puto" },
+        { nomeUsuario: "Cantinho feliz", tipo: "Hotel" },
+        { nomeUsuario: "AMEPET", tipo: "Hospital Veterinário" },
+        { nomeUsuario: "Marcia", tipo: "Cuidados da titia" }
     ]);
     return (
         <main>
             <div className='main__container'>
-                <div className='main__banner'>
+                <Banner>
                     <img src={banner} alt="Anúncio" />
                     <span>Publicidade</span>
-                </div>
+                </Banner>
                 <div className='main_spaces'>
                     <div className='space_left'>
                         <div className='space_titlo'>
@@ -89,6 +93,7 @@ const Main = () => {
                                 var imagem;
                                 var icone;
                                 var descricao;
+                              
                                 switch(a.tipo){
                                     case "Hospital Veterinário":
                                         descricao=a.nomeUsuario+" - "+a.tipo;
@@ -122,9 +127,11 @@ const Main = () => {
                                     </div>
                                     <div className='ad-info'>
                                         <div className='ad-title'>{descricao}</div>
-                                        <div className='ad-button'>
-                                            <i class={icone}></i>
-                                        </div>
+                                        <Link to="/service">
+                                            <div className='ad-button'>
+                                                <i class={icone}></i>
+                                            </div>
+                                        </Link>
                                     </div>
                                 </div>);
                             })}

@@ -5,6 +5,10 @@ import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import EditProfile from './components/EditProfile';
+import Main from './components/main';
+import Navbar from './components/nav';
+import Profile from './components/Profile';
+import Servico from './components/Servico';
 import EditPetProfile from './components/EditPetProfile';
 import Main from './components/main';
 import Navbar from './components/nav';
@@ -27,6 +31,8 @@ function RouteUser() {
             <Route path="/" element={<Main />} />
             <Route path="profile" element={<Profile />}/>
             <Route path="profile/editProfile" element={<EditProfile />}/>
+            <Route path="profilePet" element={<Main/>} />
+            <Route path="service" element={<Servico/>} />
             <Route path="profilePet" element={<EditPetProfile/>} />
             <Route path="profilePet/editPetProfile" element={<EditPetProfile/>} />
             <Route path="profilePetCaretaker" element={<EditProfile />} />

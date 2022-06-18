@@ -1,0 +1,7 @@
+.box-background{
+    width: 100%;
+    height: auto;
+    background: #EBEBF2;
+    border-radius: 7px;
+    outline: 2px solid rgba(0, 0, 0, 0.15);
+}
