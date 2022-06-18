@@ -6,7 +6,7 @@
 }
 .box-icon-price{
     background: #00AFBB;
-    width: 150px;
+    width: 170px;
     height: auto;
     padding: 10px;
     text-align: center;
@@ -24,6 +24,7 @@
     font-size: 35.5px;
     font-weight: 500;
     color: #006269;
+    cursor: pointer;
 }
 .price-service,.data-service{
     padding: 10px 10px 10px 180px;
@@ -41,6 +42,6 @@
     font-size: 18px;
     font-weight: 500;
     line-height: 1.4;
-    text-align: justify;
+    text-align: center;
     color: rgba(0, 0, 0, 0.4);
 }

@@ -1,13 +1,31 @@
 import './styles.css';
 
-import vetpet from '../../assets/vetpet.png';
+import { useEffect, useState } from 'react';
 
+import vetpet from '../../assets/vetpet.png';
 import Banner from '../Banner';
 import Box from '../Box';
 
 const Servico = () => {
+    
+    const [service, setService] = useState(
+        { nome: "Passeio", tipo: "Passeios",range:"Barra",description:"Passeio individual com cachorro no porto da Barra durante 30 minutos", 
+    preco:150 ,data:[{valor:"17/06 - 10:00",usuario:null, icon:"fa-solid fa-calendar-plus"}], nomeUsuario: "Marcelo" }
+    );
+
+    const agendarHorario = (value) =>{
+        var servico = service;
+        var lista = servico.data;
+        lista.map((a, i) => {
+            if(a.valor === value.valor) {
+                a.usuario = service.nomeUsuario;
+            }
+        })
+        setService(servico);
+    }
+    
     return (
-        <main>
+        <main>      
             <div className='main__container'>
                 <Banner>
                     <div className='box-icon box-icon-service'>
@@ -18,17 +36,29 @@ const Servico = () => {
                 <div className='main_spaces'>
                     <div className='space_left'>
                         <div className='space_titlo'>
-                            Sobre o serviço
+                            {service.tipo} com {service.nomeUsuario}
                         </div>
                         <div className='space_services'>
                             <Box><div className='caixa-texto'>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum semper tincidunt turpis, et ornare felis feugiat vel. Ut dictum ante nec dictum condimentum. Donec elementum, nunc sodales vestibulum mattis, mi diam vestibulum eros, convallis malesuada nibh ipsum et lacus. Duis ornare dictum dolor, vitae varius mi pulvinar sed. Nunc arcu mi, maximus id lorem quis, tristique condimentum nulla. Etiam in nunc neque. Nulla facilisi. Phasellus eget faucibus tellus. Nam consectetur turpis mauris, in aliquam neque lacinia eu.
+                                {service.description}
                             </div></Box>
+                            <Box>
+                                <div className='box-icon box-icon-price'>
+                                    Colaborador
+                                </div>
+                                <div className='price-service'>{service.nomeUsuario}</div>
+                            </Box>
                             <Box>
                                 <div className='box-icon box-icon-price'>
                                     Preço
                                 </div>
-                                <div className='price-service'>31/10 - 12:30</div>
+                                <div className='price-service'>R$: {service.preco}</div>
+                            </Box>
+                            <Box>
+                                <div className='box-icon box-icon-price'>
+                                    Região
+                                </div>
+                                <div className='price-service'>{service.range}</div>
                             </Box>
                         </div>
                     </div>
@@ -38,14 +68,22 @@ const Servico = () => {
                             Agendar serviço
                         </div>
                         <div className='space_services'>
-                        <Box>
-                                <div className='box-icon-date'>
-                                <i class="fa-solid fa-calendar-plus"></i>
-                                </div>
-                                <div className='data-service'>31/10/2022 - 12:30</div>
-                            </Box>
+                            {service.data.map((a, i) => {
+                            return(
+                                <Box>
+                                    <div>
+                                        <div onClick={()=>agendarHorario(a)} className='box-icon-date'>
+                                        <i class={a.icon}></i>
+                                        </div>
+                                        <div className='data-service'>{a.valor}</div>
+                                    </div>
+                                </Box>
+                                );
+                            })}
                         </div>
+                        
                     </div>
+                    
                 </div>
             </div>
         </main>
