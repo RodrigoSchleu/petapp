@@ -7,6 +7,8 @@ import Button from '../Button';
 import Input from '../Input';
 import InputMask from '../InputMask';
 
+import { Link } from 'react-router-dom';
+
 const EditProfile = () => {
     function handleSubmit(data) {
         alert(JSON.stringify(data))
@@ -16,6 +18,7 @@ const EditProfile = () => {
         <main>
             <div className='main__container'>
                 <Form className='form' onSubmit={handleSubmit}>
+                <h1>Dados Pessoais</h1>
                     <div className='form-group'>
                         <label>Nome</label>
                         <Input name="petownername" type="text" className='input' />
@@ -73,6 +76,8 @@ const EditProfile = () => {
                         <Input name="complement" type="text" className='input' />
                     </div>
                     <Button type="submit">Atualizar Dados</Button>
+                    <a><Link to="/profile"><Button styleType='footer'>Voltar</Button></Link></a>
+
                 </Form>
 
             </div>

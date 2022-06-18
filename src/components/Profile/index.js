@@ -10,12 +10,32 @@ import Button from '../Button';
 const Profile = () => {
     const [usuario,setUsuario] = useState({
         Nome:"Felipe",
-        sobrenome:"Costa Tavares",
-        telefone:"(71) 99324-5289",
-        cpf:"016.391.555-54",
-        rg:"12.791.402-16",
-        dataDeNascimento:"20/03/1995"
+        Sobrenome:"Costa Tavares",
+        Telefone:"(71) 99324-5289",
+        Cpf:"016.391.555-54",
+        Rg:"12.791.402-16",
+        DataDeNascimento:"20/03/1995"
     });
+    const [endereco,setEndereco] = useState({
+        Estado:"BA",
+        Cidade:"Salvador",
+        Bairro:"Pituba",
+        Rua:"Alameda Florença",
+        Numero:"56",
+        Cep:"41830-460",
+        Complemento:"Edifício Tulio, Apartamento 904"
+    });
+    return (
+        <main>
+            
+            <div className='main__container tc_container'>
+                <h1>Dados Pessoais</h1>
+            {Object.keys(usuario).map((a, i) => {
+                return(
+                    <div className='type_content'>
+                        <div className='type'>{a}</div>
+                        <div className='content'>{usuario[a]}</div>
+    });}
     const [endereco,setEndereco] = useState({
         estado:"BA",
         cidade:"Salvador",
@@ -37,6 +57,13 @@ const Profile = () => {
                 );
             })}
             </div>
+            <div className='main__container tc_container'>
+            <h1>Endereço</h1>
+            {Object.keys(endereco).map((a, i) => {
+                return(
+                    <div className='type_content'>
+                        <div className='type'>{a}</div>
+                        <div className='content'>{endereco[a]}</div>
             <div className='main__container'>
             {Object.keys(endereco).map((a, i) => {
                 return(

@@ -2,12 +2,22 @@
     display: none;
 }
 
-Button {
-    max-width: 500px;
+.tc_content {
+    flex: auto;
 }
 
-.form-group {
-    max-width: 500px;
+.type_content {
+    padding: 10px 30px;
+
+}
+.type {
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.content {
+    padding-top: 5px;
+    
 }
 
 .main__container {
