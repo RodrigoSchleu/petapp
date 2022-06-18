@@ -1,6 +1,5 @@
 .menu-bottom {
     display: none;
-   
 }
 
 Button {
@@ -10,6 +9,7 @@ Button {
 .form-group {
     max-width: 500px;
 }
+
 .main__container {
     padding: 20px 30px;
 }

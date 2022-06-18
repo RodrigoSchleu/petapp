@@ -6,12 +6,13 @@ import React from 'react';
 import Button from '../Button';
 import Input from '../Input';
 import InputMask from '../InputMask';
+
 import { Link } from 'react-router-dom';
 
 const EditProfile = () => {
     function handleSubmit(data) {
         alert(JSON.stringify(data))
-        
+        // { email: 'test@example.com', password: '123456' }
     }
     return (
         <main>
@@ -76,6 +77,7 @@ const EditProfile = () => {
                     </div>
                     <Button type="submit">Atualizar Dados</Button>
                     <a><Link to="/profile"><Button styleType='footer'>Voltar</Button></Link></a>
+
                 </Form>
 
             </div>

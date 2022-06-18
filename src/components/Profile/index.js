@@ -35,6 +35,24 @@ const Profile = () => {
                     <div className='type_content'>
                         <div className='type'>{a}</div>
                         <div className='content'>{usuario[a]}</div>
+    });}
+    const [endereco,setEndereco] = useState({
+        estado:"BA",
+        cidade:"Salvador",
+        bairro:"Pituba",
+        rua:"Alameda Florença",
+        numero:"56",
+        cep:"41830-460",
+        complemento:"Edifício Tulio, Apartamento 904"
+    });
+    return (
+        <main>
+            <div className='main__container'>
+            {Object.keys(usuario).map((a, i) => {
+                return(
+                    <div>
+                        <div>{a}</div>
+                        <div>{usuario[a]}</div>
                     </div>
                 );
             })}
@@ -46,6 +64,12 @@ const Profile = () => {
                     <div className='type_content'>
                         <div className='type'>{a}</div>
                         <div className='content'>{endereco[a]}</div>
+            <div className='main__container'>
+            {Object.keys(endereco).map((a, i) => {
+                return(
+                    <div>
+                        <div>{a}</div>
+                        <div>{endereco[a]}</div>
                     </div>
                 );
             })}

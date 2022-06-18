@@ -31,6 +31,7 @@ function RouteUser() {
             <Route path="profilePet/editPetProfile" element={<EditPetProfile/>} />
             <Route path="profilePetCaretaker" element={<EditProfile />} />
             <Route path="contract" element={<EditProfile />} />
+            <Route path="profilePet" element={<Main/>} />
             <Route path="historic" element={<EditProfile />} />
           </Route>
         </Routes>
