@@ -1,12 +1,13 @@
-import './Register.css';
-import SingIn from '../../components/SingIn';
+import './style.css';
+
+import SingUp from '../../components/SingUp';
 
 const Login = () => {
 
   return (
     <div id='login'>
       <div className='card'>
-        <SingIn/>
+        <SingUp/>
       </div>
     </div>
   );
