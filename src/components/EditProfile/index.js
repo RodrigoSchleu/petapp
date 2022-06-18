@@ -76,6 +76,7 @@ const EditProfile = () => {
                         <Input name="complement" type="text" className='input' />
                     </div>
                     <Button type="submit">Atualizar Dados</Button>
+
                     <a><Link to="/profile"><Button styleType='footer'>Voltar</Button></Link></a>
 
                 </Form>

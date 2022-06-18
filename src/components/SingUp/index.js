@@ -15,6 +15,15 @@ export default function SingIn() {
 
     return (
         <Form className='form' onSubmit={handleSubmit}>
+            <div className='line'>
+                <div className='form-group'>
+                    <label>Nome</label>
+                    <Input name="nome" type="text" className='input' />
+                </div>
+                <div className='form-group'>
+                    <label>Sobrenome</label>
+                    <Input name="sobrenome" type="text" className='input' />
+                </div>
             <div className='form-group'>
                 <label>Nome</label>
                 <Input name="nome" className='input'/>
@@ -23,12 +32,58 @@ export default function SingIn() {
                 <label>E-mail</label>
                 <Input name="email" type="email" className='input'/>
             </div>
-
-            <div className='form-group'>
-                <label>Senha</label>
-                <Input name="password" type="password" className='input'/>
+            <div className='line'>
+                <div className='form-group'>
+                    <label>E-mail</label>
+                    <Input name="email" type="email" className='input' />
+                </div>
+                <div className='form-group'>
+                    <label>Telefone</label>
+                    <Input name="telefone" type="text" className='input' />
+                </div>
             </div>
-            <Button type="submit">Fazer Login</Button>
+            <div className='line'>
+                <div className='form-group'>
+                    <label>Senha</label>
+                    <Input name="password" type="password" className='input' />
+                </div>
+                <div className='form-group'>
+                    <label>Confirmar Senha</label>
+                    <Input name="confirmPassword" type="password" className='input' />
+                </div>
+            </div>
+            <div className='line'>
+                <div className='form-group'>
+                    <label>Cpf</label>
+                    <Input name="cpf" type="text" className='input' />
+                </div>
+                <div className='form-group'>
+                    <label>Cep</label>
+                    <Input name="cep" type="text" className='input' />
+                </div>
+            </div>
+            <div className='line'>
+                <div className='form-group'>
+                    <label>Estado</label>
+                    <Input name="estado" type="text" className='input' />
+                </div>
+                <div className='form-group'>
+                    <label>Cidade</label>
+                    <Input name="cidade" type="text" className='input' />
+                </div>
+            </div>
+            <div className='line'>
+                <div className='form-group'>
+                    <label>Bairro</label>
+                    <Input name="bairro" type="text" className='input' />
+                </div>
+                <div className='form-group'>
+                    <label>Complemento</label>
+                    <Input name="complemento" type="text" className='input' />
+                </div>
+            </div>
+
+            <Button type="submit">Cadastrar-se</Button>
         </Form>
     )
 }
