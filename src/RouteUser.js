@@ -5,13 +5,10 @@ import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 import EditProfile from './components/EditProfile';
-import Main from './components/main';
 import Navbar from './components/nav';
-import Profile from './components/Profile';
 import Servico from './components/Servico';
 import EditPetProfile from './components/EditPetProfile';
-import Main from './components/main';
-import Navbar from './components/nav';
+import Main from './components/Main';
 import Profile from './components/Profile';
 import Sidebar from './components/sidebar/Sidebar';
 
