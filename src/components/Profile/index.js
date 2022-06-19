@@ -6,14 +6,9 @@ import Button from '../Button';
 
 
 const Profile = () => {
-    const [usuario,setUsuario] = useState({
-        Nome:"Felipe",
-        Sobrenome:"Costa Tavares",
-        Telefone:"(71) 99324-5289",
-        Cpf:"016.391.555-54",
-        Rg:"12.791.402-16",
-        DataDeNascimento:"20/03/1995"
-    });
+
+    const [usuario,setUsuario] = useState(JSON.parse(localStorage.getItem("usuario")));
+
     const [endereco,setEndereco] = useState({
         estado:"BA",
         cidade:"Salvador",

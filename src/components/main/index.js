@@ -1,13 +1,11 @@
 import './styles.css';
 
-import { useState } from 'react';
-
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import banner from '../../assets/banner.png';
 import caoputo from '../../assets/caoputo.png';
 import vetpet from '../../assets/vetpet.png';
-
 import Banner from '../Banner';
 
 const Main = () => {

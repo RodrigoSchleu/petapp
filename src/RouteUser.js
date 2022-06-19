@@ -4,12 +4,15 @@ import * as React from 'react';
 import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
+import EditPetProfile from './components/EditPetProfile';
 import EditProfile from './components/EditProfile';
 import Navbar from './components/nav';
 import Servico from './components/Servico';
-import EditPetProfile from './components/EditPetProfile';
 import Main from './components/Main';
 import Profile from './components/Profile';
+import PetProfile from './components/PetProfile';
+
+
 import Sidebar from './components/sidebar/Sidebar';
 
 function RouteUser() {
@@ -28,13 +31,11 @@ function RouteUser() {
             <Route path="/" element={<Main />} />
             <Route path="profile" element={<Profile />}/>
             <Route path="profile/editProfile" element={<EditProfile />}/>
-            <Route path="profilePet" element={<Main/>} />
             <Route path="service" element={<Servico/>} />
-            <Route path="profilePet" element={<EditPetProfile/>} />
+            <Route path="profilePet" element={<PetProfile/>} />
             <Route path="profilePet/editPetProfile" element={<EditPetProfile/>} />
             <Route path="profilePetCaretaker" element={<EditProfile />} />
             <Route path="contract" element={<EditProfile />} />
-            <Route path="profilePet" element={<Main/>} />
             <Route path="historic" element={<EditProfile />} />
           </Route>
         </Routes>
