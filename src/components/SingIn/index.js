@@ -11,8 +11,17 @@ import Input from '../Input';
 export default function SingIn() {
     let navigate = useNavigate();
 
-    function handleSubmit(data) {
-        navigate("main");
+    function handleSubmit(data) { 
+        localStorage.setItem("usuario",JSON.stringify({
+            Nome:"Rodrigo",
+            Sobrenome:"Schleu",
+            Telefone:"(71) 99324-5289",
+            Cpf:"016.391.555-54",
+            Rg:"12.791.402-16",
+            DataDeNascimento:"20/03/1995",
+            Email:data.email
+        }));
+        document.location.reload(true);
         //alert(JSON.stringify(data))
         // { email: 'test@example.com', password: '123456' }
     }
