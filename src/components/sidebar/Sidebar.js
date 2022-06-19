@@ -23,7 +23,9 @@ const Sidebar = ({ sidebarOpen, closeSidebar }) => {
                     <a><Link to="profile"><Button styleType='dark'>Perfil</Button></Link></a>
                     <a><Link to="profilePet"><Button styleType='dark'>Perfil Pet</Button></Link></a>
                     <a><Link to="service"><Button styleType='dark'>Serviço</Button></Link></a>
+
                     <a><Link to="contract"><Button styleType='dark'>Contrato</Button></Link></a>
+
                 </div>
             </div>
             <div className='sidebar__footer'>

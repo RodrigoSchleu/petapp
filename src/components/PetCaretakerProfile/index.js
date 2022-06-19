@@ -9,16 +9,19 @@ import Button from '../Button';
 
 const Profile = () => {
     const [usuario,setUsuario] = useState({
+
         Nome:"Marcelo",
         Sobrenome:"Passos de Moraes",
         Telefone:"(71) 99324-5289",
         
+
     });
     return (
         <main>
             
             <div className='main__container tc_container'>
-                <h1>Dados do Colaborador</h1>
+              <h1>Dados do Colaborador</h1>
+
             {Object.keys(usuario).map((a, i) => {
                 return(
                     <div className='type_content'>

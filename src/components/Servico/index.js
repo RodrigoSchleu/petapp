@@ -16,6 +16,7 @@ const Servico = () => {
 
     const [service, setService] = useState(
         { nome: "Passeio", tipo: "Passeios",range:"Barra",description:"Passeio individual com cachorro no porto da Barra durante 30 minutos", 
+
     preco:150 ,data:[{valor:"17/06 - 10:00",usuario:null, icon:"fa-solid fa-calendar-plus"}, {valor:"17/06 - 12:00",usuario:null, icon:"fa-solid fa-calendar-plus"}, {valor:"17/06 - 14:00",usuario:null, icon:"fa-solid fa-calendar-plus"}], nomeUsuario: "Marcelo" }
     );
 
@@ -23,6 +24,7 @@ const Servico = () => {
         {nomePet: "Chulé"}, {nomePet: "Milo"}, {nomePet: "Gato"}
     ]
     )
+
 
     const listaData = () => {
         var lista = [];
@@ -32,6 +34,7 @@ const Servico = () => {
         });
         return lista;
     }
+
 
     const listaDataPet = () => {
         var lista = [];
@@ -52,6 +55,7 @@ const Servico = () => {
         })
         setService(servico);
     }
+
     function handleSubmit(data) {
         alert(JSON.stringify(data))
         // { email: 'test@example.com', password: '123456' }
@@ -59,6 +63,7 @@ const Servico = () => {
     
     return (
         
+
         <main>      
             <div className='main__container'>
                 <Banner>
@@ -102,10 +107,12 @@ const Servico = () => {
                     <div className='main__line line-size'/>
                     <div className='space_right'>
                         <div className='space_titlo'>
+
                             Agendar Horário
                         </div>
                         <div className='space_services'>
                             {/* {service.data.map((a, i) => {
+
                             return(
                                 <Box>
                                     <div>
@@ -116,6 +123,7 @@ const Servico = () => {
                                     </div>
                                 </Box>
                                 );
+
                             })} */}
                             <Form className='form' onSubmit={handleSubmit}>
                                 <div className='form-group'>
@@ -136,6 +144,7 @@ const Servico = () => {
                                     <Button type="submit">Contratar</Button>
                                 </div>
                                 </Form>
+
 
                         </div>
                         

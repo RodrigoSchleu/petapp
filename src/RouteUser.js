@@ -13,6 +13,7 @@ import PetProfile from './components/PetProfile';
 import Profile from './components/Profile';
 import Servico from './components/Servico';
 import ServicoContratado from './components/ServicoContratado';
+
 import Sidebar from './components/sidebar/Sidebar';
 
 function RouteUser() {
@@ -31,12 +32,14 @@ function RouteUser() {
             <Route path="/" element={<Main />} />
             <Route path="profile" element={<Profile />}/>
             <Route path="profile/editProfile" element={<EditProfile />}/>
+
             <Route path="profilePet" element={<PetProfile/>} />
             <Route path="profilePet/editPetProfile" element={<EditPetProfile/>} />
             <Route path="service" element={<Servico/>} />
             <Route path="/service/profilePetCaretaker" element={<PetCaretakerProfile />} />
             <Route path="contract" element={<ServicoContratado />} />
             <Route path="/contract/profilePetCaretaker" element={<PetCaretakerProfile />} />
+
             <Route path="historic" element={<EditProfile />} />
           </Route>
         </Routes>
