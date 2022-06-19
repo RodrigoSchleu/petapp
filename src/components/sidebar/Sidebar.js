@@ -1,11 +1,12 @@
 import '../sidebar/Sidebar.css';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import logo from '../../assets/avatar.png';
 import Button from '../Button';
 
 const Sidebar = ({ sidebarOpen, closeSidebar }) => {
+    let navigate = useNavigate();
     return (
         <section className={sidebarOpen ? "sidebar-responsive" : ""} id="sidebar">
             <div id='topbar' className='topbar' style={{ marginBottom: "90px", height: "65px", padding: "10px 0 0" }}>
@@ -21,12 +22,17 @@ const Sidebar = ({ sidebarOpen, closeSidebar }) => {
                     <a><Link to="/"><Button styleType='dark' active={true}>Home</Button></Link></a>
                     <a><Link to="profile"><Button styleType='dark'>Perfil</Button></Link></a>
                     <a><Link to="profilePet"><Button styleType='dark'>Perfil Pet</Button></Link></a>
+                    <a><Link to="service"><Button styleType='dark'>Serviço</Button></Link></a>
                     <a><Link to="historic"><Button styleType='dark'>Histórico de serviçoos</Button></Link></a>
                 </div>
             </div>
             <div className='sidebar__footer'>
                 <div className='footer__line' />
-                <a><Button styleType='footer'>Sair</Button></a>
+                <Button onClick={()=>{
+                    localStorage.removeItem("usuario");
+                    navigate('/');
+                    document.location.reload(true);
+                }} styleType='footer'>Sair</Button>
             </div>
         </section>
     );

@@ -1,8 +1,8 @@
 import './styles.css';
 
-const Button = ({children,styleType = 'dark',active = false}) => {
+const Button = ({children,styleType = 'dark',active = false,...Rest}) => {
     return (
-        <button className={active ? "button active":"button"} id={styleType}>{children}</button>
+        <button className={active ? "button active":"button"} id={styleType} {...Rest}>{children}</button>
     );
 }
 
