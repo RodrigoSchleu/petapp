@@ -32,7 +32,7 @@ const PetProfile = () => {
             </div>
             
             <div className="sidebar__menu">
-                <a><Link reloadDocument to="editProfile"><Button styleType='dark' active={true}>Editar Perfil</Button></Link></a>
+                <a><Link reloadDocument to="editPetProfile"><Button styleType='dark' active={true}>Editar Perfil</Button></Link></a>
             </div>
         </main>
     );

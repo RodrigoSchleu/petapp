@@ -6,13 +6,12 @@ import { Route, Routes } from 'react-router-dom';
 
 import EditPetProfile from './components/EditPetProfile';
 import EditProfile from './components/EditProfile';
+import Main from './components/main';
 import Navbar from './components/nav';
-import Servico from './components/Servico';
-import Main from './components/Main';
-import Profile from './components/Profile';
+import PetCaretakerProfile from './components/PetCaretakerProfile';
 import PetProfile from './components/PetProfile';
-
-
+import Profile from './components/Profile';
+import Servico from './components/Servico';
 import Sidebar from './components/sidebar/Sidebar';
 
 function RouteUser() {
@@ -34,7 +33,7 @@ function RouteUser() {
             <Route path="service" element={<Servico/>} />
             <Route path="profilePet" element={<PetProfile/>} />
             <Route path="profilePet/editPetProfile" element={<EditPetProfile/>} />
-            <Route path="profilePetCaretaker" element={<EditProfile />} />
+            <Route path="/service/profilePetCaretaker" element={<PetCaretakerProfile />} />
             <Route path="contract" element={<EditProfile />} />
             <Route path="historic" element={<EditProfile />} />
           </Route>

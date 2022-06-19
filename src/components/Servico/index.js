@@ -1,14 +1,15 @@
 import './styles.css';
 
-
 import { Form } from '@unform/web';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import vetpet from '../../assets/vetpet.png';
-
 import Banner from '../Banner';
 import Box from '../Box';
+import Button from '../Button';
 import Select from '../Select';
+
 
 const Servico = () => {
     
@@ -61,6 +62,9 @@ const Servico = () => {
                                     Colaborador
                                 </div>
                                 <div className='price-service'>{service.nomeUsuario}</div>
+                                <div className="sidebar__menu">
+                                    <a><Link reloadDocument to="profilePetCaretaker"><Button styleType='dark' active={true}>Ver Colaborador</Button></Link></a>
+                                </div>
                             </Box>
                             <Box>
                                 <div className='box-icon box-icon-price'>
