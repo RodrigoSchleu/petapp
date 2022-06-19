@@ -1,14 +1,14 @@
 import './styles.css';
-
 import React from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-
 import Button from '../Button';
 
 
 const Profile = () => {
+
     const [usuario,setUsuario] = useState(JSON.parse(localStorage.getItem("usuario")));
+
     const [endereco,setEndereco] = useState({
         estado:"BA",
         cidade:"Salvador",

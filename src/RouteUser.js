@@ -6,11 +6,13 @@ import { Route, Routes } from 'react-router-dom';
 
 import EditPetProfile from './components/EditPetProfile';
 import EditProfile from './components/EditProfile';
-import Main from './components/main';
 import Navbar from './components/nav';
-import PetProfile from './components/PetProfile';
-import Profile from './components/Profile';
 import Servico from './components/Servico';
+import Main from './components/Main';
+import Profile from './components/Profile';
+import PetProfile from './components/PetProfile';
+
+
 import Sidebar from './components/sidebar/Sidebar';
 
 function RouteUser() {

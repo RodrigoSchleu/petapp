@@ -1,15 +1,18 @@
 import './styles.css';
 
+
 import { Form } from '@unform/web';
 import { useEffect, useState } from 'react';
 
 import vetpet from '../../assets/vetpet.png';
+
 import Banner from '../Banner';
 import Box from '../Box';
 import Select from '../Select';
 
 const Servico = () => {
     
+
     const [service, setService] = useState(
         { nome: "Passeio", tipo: "Passeios",range:"Barra",description:"Passeio individual com cachorro no porto da Barra durante 30 minutos", 
     preco:150 ,data:[{valor:"17/06 - 10:00",usuario:null, icon:"fa-solid fa-calendar-plus"}], nomeUsuario: "Marcelo" }
@@ -96,9 +99,11 @@ const Servico = () => {
                                     <Select name="horario" options={listaData()} />
                                 </div>
                             </Form>
+
                         </div>
                         
                     </div>
+
                     
                 </div>
             </div>

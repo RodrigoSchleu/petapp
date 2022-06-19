@@ -75,10 +75,12 @@ export default function SingIn() {
                     <Input name="complemento" type="text" className='input' />
                 </div>
             </div>
+
             <div className='line'>
                 <Button type="submit">Cadastrar-se</Button>
             </div>
             
+
         </Form>
     )
 }
