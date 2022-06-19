@@ -86,21 +86,12 @@ const Servico = () => {
                     <div className='space_left'>
                         <div className='space_titlo'>
                             Sobre o serviço
-                            {/* {service.tipo} com {service.nomeUsuario} */}
                         </div>
                         <div className='space_services'>
                             <Box><div className='caixa-texto'>
                                 {service.description}
                             </div></Box>
-                            {/* <Box>
-                                <div className='box-icon box-icon-price'>
-                                    Colaborador
-                                </div>
-                                <div className='price-service'>{service.nomeUsuario}</div>
-                                <div className="sidebar__menu">
-                                    <a><Link reloadDocument to="profilePetCaretaker"><Button styleType='dark' active={true}>Ver Colaborador</Button></Link></a>
-                                </div>
-                            </Box> */}
+                            
                             <Box>
                                 <div className='box-icon box-icon-price'>
                                     Preço

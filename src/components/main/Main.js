@@ -6,12 +6,9 @@ import { Link } from 'react-router-dom';
 import banner from '../../assets/banner.png';
 import caoputo from '../../assets/caoputo.png';
 import vetpet from '../../assets/vetpet.png';
-import Agromix from '../../assets/Agromix.png';
-import petshoppertodemim from '../../assets/petshoppertodemim.png';
-import amepet from '../../assets/amepet.png';
 import Banner from '../Banner';
 
-const Main = () => {
+const Main2 = () => {
     const [servicosContratados, setServicosContratados] = useState([
         { nomeUsuario: "Roger", tipo: "Passeios", data: "17/06 - 10:00" },
         { nomeUsuario: "João", tipo: "Adestramento Cão Puto", data: "20/06 - 10:00" },
@@ -19,10 +16,12 @@ const Main = () => {
         { nomeUsuario: "Hostel Pet", tipo: "Hospital Veterinário", data: "17/06 - 10:00" },
         { nomeUsuario: "Maria", tipo: "Cuidados da titia", data: "17/06 - 10:00" }
     ]);
-    const [parceiros, setParceiros] = useState([
-        { nomeParceiro: "amepet", tipo: "clinica" },
-        { nomeParceiro: "petperto", tipo: "petshop" },
-        { nomeParceiro: "agromix", tipo: "petcenter" }
+    const [servicosDisponiveis, setServicosDisponiveis] = useState([
+        { nomeUsuario: "Paulo", tipo: "Passeios" },
+        { nomeUsuario: "Marcelo", tipo: "Adestramento Cão Puto" },
+        { nomeUsuario: "Cantinho feliz", tipo: "Hotel" },
+        { nomeUsuario: "AMEPET", tipo: "Hospital Veterinário" },
+        { nomeUsuario: "Marcia", tipo: "Cuidados da titia" }
     ]);
     return (
         <main>
@@ -38,36 +37,7 @@ const Main = () => {
                         </div>
                         <div className='space_services'>
                             {servicosContratados.map((a, i) => {
-                                var icone;
-                                var descricao;
-                                var color;
-                                switch(a.tipo){
-                                    case "Hospital Veterinário":
-                                        descricao=a.nomeUsuario+" - "+a.tipo;
-                                        color="#00AFBB";
-                                        icone="fa-solid fa-house-chimney-medical";
-                                        break;
-                                    case "Adestramento Cão Puto":
-                                        descricao=a.tipo+" com "+a.nomeUsuario;
-                                        color="#2594E4";
-                                        icone="fa-solid fa-bone";
-                                        break;
-                                    case "Passeios":
-                                        descricao=a.tipo+" com "+a.nomeUsuario;
-                                        color="#FBBB00";
-                                        icone="fa-solid fa-dog";
-                                        break;
-                                    case "Hotel":
-                                        descricao=a.nomeUsuario+" - "+a.tipo;
-                                        color="#F14336";
-                                        icone="fa-solid fa-bell-concierge";
-                                        break;
-                                    case "Cuidados da titia":
-                                        descricao=a.tipo+" com "+a.nomeUsuario;
-                                        color="#28B446";
-                                        icone="fa-solid fa-hand-holding-heart";
-                                        break;
-                                }
+                                
                                 return(
                                     <div className='box-service'>
                                         <div className='box-icon' style={{ background: color }}>
@@ -85,27 +55,52 @@ const Main = () => {
                     <div className='main__line' />
                     <div className='space_right'>
                         <div className='space_titlo'>
-                            Conheça Nossos Parceiros!!
+                            Serviços Disponíveis
                         </div>
                         <div className='space_services'>
-                            {parceiros.map((a, i) => {
+                            {servicosDisponiveis.map((a, i) => {
                                 var imagem;
-                                
+                                var icone;
+                                var descricao;
                               
                                 switch(a.tipo){
-                                    case "petcenter":
-                                        imagem=Agromix;
+                                    case "Hospital Veterinário":
+                                        descricao=a.nomeUsuario+" - "+a.tipo;
+                                        imagem=vetpet;
+                                        icone="fa-solid fa-house-chimney-medical";
                                         break;
-                                    case "petshop":
-                                        imagem=petshoppertodemim;
+                                    case "Adestramento Cão Puto":
+                                        descricao=a.tipo+" com "+a.nomeUsuario;
+                                        imagem=caoputo;
+                                        icone="fa-solid fa-bone";
                                         break;
-                                    case "clinica":
-                                        imagem=amepet;
+                                    case "Passeios":
+                                        descricao=a.tipo+" com "+a.nomeUsuario;
+                                        imagem=vetpet;
+                                        icone="fa-solid fa-dog";
+                                        break;
+                                    case "Hotel":
+                                        descricao=a.nomeUsuario+" - "+a.tipo;
+                                        imagem=vetpet;
+                                        icone="fa-solid fa-bell-concierge";
+                                        break;
+                                    case "Cuidados da titia":
+                                        descricao=a.tipo+" com "+a.nomeUsuario;
+                                        imagem=vetpet;
+                                        icone="fa-solid fa-hand-holding-heart";
                                         break;
                                 }
                                 return(<div className='ad-service'>
                                     <div className='ad-img'>
-                                        <img src={imagem} />                                        
+                                        <img src={imagem} />
+                                    </div>
+                                    <div className='ad-info'>
+                                        <div className='ad-title'>{descricao}</div>
+                                        <Link to="/service">
+                                            <div className='ad-button'>
+                                                <i class={icone}></i>
+                                            </div>
+                                        </Link>
                                     </div>
                                 </div>);
                             })}
@@ -124,4 +119,4 @@ const Main = () => {
     );
 }
 
-export default Main;
+export default Main2;
