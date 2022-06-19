@@ -1,67 +1,55 @@
-import './Main.css';
+import './styles.css';
+
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+
 import banner from '../../assets/banner.png';
 import caoputo from '../../assets/caoputo.png';
 import vetpet from '../../assets/vetpet.png';
+import Banner from '../Banner';
 
-const Main = () => {
+const Main2 = () => {
+    const [servicosContratados, setServicosContratados] = useState([
+        { nomeUsuario: "Roger", tipo: "Passeios", data: "17/06 - 10:00" },
+        { nomeUsuario: "João", tipo: "Adestramento Cão Puto", data: "20/06 - 10:00" },
+        { nomeUsuario: "Dog House 4.0", tipo: "Hotel", data: "17/06 - 10:00" },
+        { nomeUsuario: "Hostel Pet", tipo: "Hospital Veterinário", data: "17/06 - 10:00" },
+        { nomeUsuario: "Maria", tipo: "Cuidados da titia", data: "17/06 - 10:00" }
+    ]);
+    const [servicosDisponiveis, setServicosDisponiveis] = useState([
+        { nomeUsuario: "Paulo", tipo: "Passeios" },
+        { nomeUsuario: "Marcelo", tipo: "Adestramento Cão Puto" },
+        { nomeUsuario: "Cantinho feliz", tipo: "Hotel" },
+        { nomeUsuario: "AMEPET", tipo: "Hospital Veterinário" },
+        { nomeUsuario: "Marcia", tipo: "Cuidados da titia" }
+    ]);
     return (
         <main>
             <div className='main__container'>
-                <div className='main__banner'>
+                <Banner>
                     <img src={banner} alt="Anúncio" />
                     <span>Publicidade</span>
-                </div>
+                </Banner>
                 <div className='main_spaces'>
                     <div className='space_left'>
                         <div className='space_titlo'>
                             Últimos Agendamentos
                         </div>
                         <div className='space_services'>
-                            <div className='box-service'>
-                                <div className='box-icon' style={{ background: "#FBBB00" }}>
-                                    <i class="fa-solid fa-dog"></i>
-                                </div>
-                                <div className='box-info'>
-                                    <div className='box-title'>Passeios com Paulo Pulo</div>
-                                    <div className='box-date'>31/10 - 12:30</div>
-                                </div>
-                            </div>
-                            <div className='box-service'>
-                                <div className='box-icon' style={{ background: "#2594E4" }}>
-                                    <i class="fa-solid fa-bone"></i>
-                                </div>
-                                <div className='box-info'>
-                                    <div className='box-title'>Adestramento Cão Puto</div>
-                                    <div className='box-date'>31/10 - 12:30</div>
-                                </div>
-                            </div>
-                            <div className='box-service'>
-                                <div className='box-icon' style={{ background: "#F14336" }}>
-                                    <i class="fa-solid fa-bell-concierge"></i>
-                                </div>
-                                <div className='box-info'>
-                                    <div className='box-title'>Hotel Cantinho Feliz</div>
-                                    <div className='box-date'>31/10 - 12:30</div>
-                                </div>
-                            </div>
-                            <div className='box-service'>
-                                <div className='box-icon' style={{ background: "#00AFBB" }}>
-                                    <i class="fa-solid fa-house-chimney-medical"></i>
-                                </div>
-                                <div className='box-info'>
-                                    <div className='box-title'>Amepet - Hospital Veterinário</div>
-                                    <div className='box-date'>31/10 - 12:30</div>
-                                </div>
-                            </div>
-                            <div className='box-service'>
-                                <div className='box-icon' style={{ background: "#28B446" }}>
-                                    <i class="fa-solid fa-hand-holding-heart"></i>
-                                </div>
-                                <div className='box-info'>
-                                    <div className='box-title'>Cuidados da Titia</div>
-                                    <div className='box-date'>31/10 - 12:30</div>
-                                </div>
-                            </div>
+                            {servicosContratados.map((a, i) => {
+                                
+                                return(
+                                    <div className='box-service'>
+                                        <div className='box-icon' style={{ background: color }}>
+                                            <i class={icone}></i>
+                                        </div>
+                                        <div className='box-info'>
+                                            <div className='box-title'>{descricao}</div>
+                                            <div className='box-date'>{a.data}</div>
+                                        </div>
+                                    </div>
+                                );
+                            })}
                         </div>
                     </div>
                     <div className='main__line' />
@@ -70,40 +58,52 @@ const Main = () => {
                             Serviços Disponíveis
                         </div>
                         <div className='space_services'>
-                            <div className='ad-service'>
-                                <div className='ad-img'>
-                                    <img src={vetpet} alt='' />
-                                </div>
-                                <div className='ad-info'>
-                                    <div className='ad-title'>Amepet - Hospital Veterinário</div>
-                                    <div className='ad-button'>
-                                        <i class="fa-solid fa-house-chimney-medical"></i>
+                            {servicosDisponiveis.map((a, i) => {
+                                var imagem;
+                                var icone;
+                                var descricao;
+                              
+                                switch(a.tipo){
+                                    case "Hospital Veterinário":
+                                        descricao=a.nomeUsuario+" - "+a.tipo;
+                                        imagem=vetpet;
+                                        icone="fa-solid fa-house-chimney-medical";
+                                        break;
+                                    case "Adestramento Cão Puto":
+                                        descricao=a.tipo+" com "+a.nomeUsuario;
+                                        imagem=caoputo;
+                                        icone="fa-solid fa-bone";
+                                        break;
+                                    case "Passeios":
+                                        descricao=a.tipo+" com "+a.nomeUsuario;
+                                        imagem=vetpet;
+                                        icone="fa-solid fa-dog";
+                                        break;
+                                    case "Hotel":
+                                        descricao=a.nomeUsuario+" - "+a.tipo;
+                                        imagem=vetpet;
+                                        icone="fa-solid fa-bell-concierge";
+                                        break;
+                                    case "Cuidados da titia":
+                                        descricao=a.tipo+" com "+a.nomeUsuario;
+                                        imagem=vetpet;
+                                        icone="fa-solid fa-hand-holding-heart";
+                                        break;
+                                }
+                                return(<div className='ad-service'>
+                                    <div className='ad-img'>
+                                        <img src={imagem} />
                                     </div>
-                                </div>
-                            </div>
-                            <div className='ad-service'>
-                                <div className='ad-img'>
-                                    <img src={caoputo} alt='' />
-                                </div>
-                                <div className='ad-info'>
-                                    <div className='ad-title'>Adestramento Cão Puto</div>
-                                    <div className='ad-button'>
-                                        <i class="fa-solid fa-bone"></i>
+                                    <div className='ad-info'>
+                                        <div className='ad-title'>{descricao}</div>
+                                        <Link to="/service">
+                                            <div className='ad-button'>
+                                                <i class={icone}></i>
+                                            </div>
+                                        </Link>
                                     </div>
-                                </div>
-                            </div>
-                            <div className='ad-service'>
-                                <div className='ad-img'>
-                                    <img src={banner} alt='' />
-                                </div>
-                                <div className='ad-info'>
-                                    <div className='ad-title'>Petz - Loja</div>
-                                    <div className='ad-button'>
-                                        <i class="fa-solid fa-paw"></i>
-                                    </div>
-                                </div>
-                            </div>
-
+                                </div>);
+                            })}
                         </div>
                     </div>
                 </div>
@@ -119,4 +119,4 @@ const Main = () => {
     );
 }
 
-export default Main;
+export default Main2;

@@ -6,6 +6,9 @@ import { Link } from 'react-router-dom';
 import banner from '../../assets/banner.png';
 import caoputo from '../../assets/caoputo.png';
 import vetpet from '../../assets/vetpet.png';
+import Agromix from '../../assets/Agromix.png';
+import petshoppertodemim from '../../assets/petshoppertodemim.png';
+import amepet from '../../assets/amepet.png';
 import Banner from '../Banner';
 
 const Main = () => {
@@ -16,12 +19,10 @@ const Main = () => {
         { nomeUsuario: "Hostel Pet", tipo: "Hospital Veterinário", data: "17/06 - 10:00" },
         { nomeUsuario: "Maria", tipo: "Cuidados da titia", data: "17/06 - 10:00" }
     ]);
-    const [servicosDisponiveis, setServicosDisponiveis] = useState([
-        { nomeUsuario: "Paulo", tipo: "Passeios" },
-        { nomeUsuario: "Marcelo", tipo: "Adestramento Cão Puto" },
-        { nomeUsuario: "Cantinho feliz", tipo: "Hotel" },
-        { nomeUsuario: "AMEPET", tipo: "Hospital Veterinário" },
-        { nomeUsuario: "Marcia", tipo: "Cuidados da titia" }
+    const [parceiros, setParceiros] = useState([
+        { nomeParceiro: "amepet", tipo: "clinica" },
+        { nomeParceiro: "petperto", tipo: "petshop" },
+        { nomeParceiro: "agromix", tipo: "petcenter" }
     ]);
     return (
         <main>
@@ -84,52 +85,27 @@ const Main = () => {
                     <div className='main__line' />
                     <div className='space_right'>
                         <div className='space_titlo'>
-                            Serviços Disponíveis
+                            Conheça Nossos Parceiros!
                         </div>
                         <div className='space_services'>
-                            {servicosDisponiveis.map((a, i) => {
+                            {parceiros.map((a, i) => {
                                 var imagem;
-                                var icone;
-                                var descricao;
+                                
                               
                                 switch(a.tipo){
-                                    case "Hospital Veterinário":
-                                        descricao=a.nomeUsuario+" - "+a.tipo;
-                                        imagem=vetpet;
-                                        icone="fa-solid fa-house-chimney-medical";
+                                    case "petcenter":
+                                        imagem=Agromix;
                                         break;
-                                    case "Adestramento Cão Puto":
-                                        descricao=a.tipo+" com "+a.nomeUsuario;
-                                        imagem=caoputo;
-                                        icone="fa-solid fa-bone";
+                                    case "petshop":
+                                        imagem=petshoppertodemim;
                                         break;
-                                    case "Passeios":
-                                        descricao=a.tipo+" com "+a.nomeUsuario;
-                                        imagem=vetpet;
-                                        icone="fa-solid fa-dog";
-                                        break;
-                                    case "Hotel":
-                                        descricao=a.nomeUsuario+" - "+a.tipo;
-                                        imagem=vetpet;
-                                        icone="fa-solid fa-bell-concierge";
-                                        break;
-                                    case "Cuidados da titia":
-                                        descricao=a.tipo+" com "+a.nomeUsuario;
-                                        imagem=vetpet;
-                                        icone="fa-solid fa-hand-holding-heart";
+                                    case "clinica":
+                                        imagem=amepet;
                                         break;
                                 }
                                 return(<div className='ad-service'>
                                     <div className='ad-img'>
-                                        <img src={imagem} />
-                                    </div>
-                                    <div className='ad-info'>
-                                        <div className='ad-title'>{descricao}</div>
-                                        <Link to="/service">
-                                            <div className='ad-button'>
-                                                <i class={icone}></i>
-                                            </div>
-                                        </Link>
+                                        <img src={imagem} />                                        
                                     </div>
                                 </div>);
                             })}
