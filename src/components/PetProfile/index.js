@@ -62,34 +62,20 @@ const PetProfile = () => {
                     <div>{a.anotacao}</div> 
                 </div>
                         
-                
             </div>
             <div className="sidebar__menu">
                 <a><Link reloadDocument to="editPetProfile"><Button styleType='dark' active={true}>Editar Perfil</Button></Link></a>
+            </div>
+            <div className="sidebar__menu">
+                <a><Link reloadDocument to="petService"><Button styleType='dark' active={true}>Contratar Serviço</Button></Link></a>
             </div>
         </div>
     );
 })}
 
-
-
-
-            {/* <div className='main__container'>
-            {Object.keys(pet).map((a, i) => {
-                return(
-                    <div>
-                        <div>{a}</div>
-                        <div>{pet[a]}</div>
-                        
-                    </div>
-                    
-                );
-            })}
-            </div>
             <div className="sidebar__menu">
-                <a><Link reloadDocument to="editPetProfile"><Button styleType='dark' active={true}>Editar Perfil</Button></Link></a>
-            </div> */}
-        
+                <a><Link reloadDocument to="newPet"><Button styleType='dark' active={true}>Adicionar Pet</Button></Link></a>
+            </div>        
         </main>
     );
 }

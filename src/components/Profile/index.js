@@ -23,9 +23,11 @@ const Profile = () => {
             <div className='main__container'>
             {Object.keys(usuario).map((a, i) => {
                 return(
-                    <div>
-                        <div>{a}</div>
-                        <div>{usuario[a]}</div>
+                    <div className='profile-box-text'>
+                        <div>
+                        {a}:<br/>
+                        <span>{usuario[a]}</span>
+                        </div>
                     </div>
                 );
             })}
@@ -45,6 +47,7 @@ const Profile = () => {
             <div className="sidebar__menu">
                 <a><Link reloadDocument to="editProfile"><Button styleType='dark' active={true}>Editar Perfil</Button></Link></a>
             </div>
+        
         </main>
     );
 }

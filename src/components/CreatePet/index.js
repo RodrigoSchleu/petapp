@@ -7,7 +7,7 @@ import Button from '../Button';
 import Input from '../Input';
 import { Link } from 'react-router-dom';
 
-const EditPetProfile = () => {
+const CreatePet = () => {
     function handleSubmit(data) {
         alert(JSON.stringify(data))
     }
@@ -15,7 +15,6 @@ const EditPetProfile = () => {
         <main>
             <div className='main__container'>
 
-                <h1>Dados Pet</h1>
                 <Form className='form' onSubmit={handleSubmit}>
                     <div className='form-group'>
                         <label>Nome</label>
@@ -52,9 +51,8 @@ const EditPetProfile = () => {
                         <Input name="note" type="text" className='input' />
                     </div>
 
-                    <br></br>
-                    <Button type="submit">Atualizar Dados</Button>
-                    <br></br>
+
+                    <Button type="submit">Criar Pet</Button>
                     <a><Link to="/profilePet"><Button styleType='footer'>Voltar</Button></Link></a>
                 </Form>
 
@@ -65,4 +63,4 @@ const EditPetProfile = () => {
     );
 }
 
-export default EditPetProfile;
+export default CreatePet;
