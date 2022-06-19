@@ -1,10 +1,12 @@
 import './styles.css';
 
+import { Form } from '@unform/web';
 import { useEffect, useState } from 'react';
 
 import vetpet from '../../assets/vetpet.png';
 import Banner from '../Banner';
 import Box from '../Box';
+import Select from '../Select';
 
 const Servico = () => {
     
@@ -12,6 +14,15 @@ const Servico = () => {
         { nome: "Passeio", tipo: "Passeios",range:"Barra",description:"Passeio individual com cachorro no porto da Barra durante 30 minutos", 
     preco:150 ,data:[{valor:"17/06 - 10:00",usuario:null, icon:"fa-solid fa-calendar-plus"}], nomeUsuario: "Marcelo" }
     );
+
+    const listaData = () => {
+        var lista = [];
+        service.data.map((a,i)=>{
+            var obj = {value:a.valor,label:a.valor};
+            lista.push(obj);
+        });
+        return lista;
+    }
 
     const agendarHorario = (value) =>{
         var servico = service;
@@ -80,6 +91,11 @@ const Servico = () => {
                                 </Box>
                                 );
                             })}
+                            <Form className='form'>
+                                <div className='form-group'>
+                                    <Select name="horario" options={listaData()} />
+                                </div>
+                            </Form>
                         </div>
                         
                     </div>

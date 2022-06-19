@@ -8,7 +8,6 @@ import RouteUser from './RouteUser';
 
 function App() {
   const [usuario,setLogado] = useState(localStorage.getItem("usuario"));
-  //localStorage.removeItem("usuario");
   return usuario!=null?<RouteUser/>:<RouteLogin/>;
 }
 
