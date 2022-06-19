@@ -62,7 +62,6 @@ const PetProfile = () => {
                     <div>{a.anotacao}</div> 
                 </div>
                         
-                
             </div>
             <div className="sidebar__menu">
                 <a><Link reloadDocument to="editPetProfile"><Button styleType='dark' active={true}>Editar Perfil</Button></Link></a>
@@ -76,8 +75,7 @@ const PetProfile = () => {
 
             <div className="sidebar__menu">
                 <a><Link reloadDocument to="newPet"><Button styleType='dark' active={true}>Adicionar Pet</Button></Link></a>
-            </div>
-        
+            </div>        
         </main>
     );
 }
