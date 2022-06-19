@@ -9,6 +9,15 @@ label{
     color: #7b7e80;
     font-weight: 400;
 }
+.line {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.form-group{
+    width: 100%;
+}
 .input {
     width: -webkit-fill-available;
     outline: none;
