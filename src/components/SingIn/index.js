@@ -19,6 +19,7 @@ export default function SingIn() {
             Cpf:"016.391.555-54",
             Rg:"12.791.402-16",
             DataDeNascimento:"20/03/1995",
+            Mail:"rodrigo@hotmail.com",
             Email:data.email
         }));
         document.location.reload(true);

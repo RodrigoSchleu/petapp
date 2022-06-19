@@ -11,6 +11,7 @@ import petshoppertodemim from '../../assets/petshoppertodemim.png';
 import amepet from '../../assets/amepet.png';
 import Banner from '../Banner';
 
+
 const Main = () => {
     const [servicosContratados, setServicosContratados] = useState([
         { nomeUsuario: "Roger", tipo: "Passeios", data: "17/06 - 10:00" },
@@ -70,13 +71,15 @@ const Main = () => {
                                 }
                                 return(
                                     <div className='box-service'>
-                                        <div className='box-icon' style={{ background: color }}>
-                                            <i class={icone}></i>
-                                        </div>
-                                        <div className='box-info'>
-                                            <div className='box-title'>{descricao}</div>
-                                            <div className='box-date'>{a.data}</div>
-                                        </div>
+                                        <Link to="contract">
+                                            <div className='box-icon' style={{ background: color }}>
+                                                <i class={icone}></i>
+                                            </div>
+                                            <div className='box-info'>
+                                                <div className='box-title'>{descricao}</div>
+                                                <div className='box-date'>{a.data}</div>
+                                            </div>
+                                        </Link>
                                     </div>
                                 );
                             })}
