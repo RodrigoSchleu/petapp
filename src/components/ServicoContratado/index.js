@@ -9,6 +9,7 @@ import Banner from '../Banner';
 import Box from '../Box';
 import Button from '../Button';
 import Select from '../Select';
+import Input from '../Input';
 
 
 const Servico = () => {
@@ -16,45 +17,13 @@ const Servico = () => {
 
     const [service, setService] = useState(
         { nome: "Passeio", tipo: "Passeios",range:"Barra",description:"Passeio individual com cachorro no porto da Barra durante 30 minutos", 
-
-    preco:150 ,data:[{valor:"17/06 - 10:00",usuario:null, icon:"fa-solid fa-calendar-plus"}, {valor:"17/06 - 12:00",usuario:null, icon:"fa-solid fa-calendar-plus"}, {valor:"17/06 - 14:00",usuario:null, icon:"fa-solid fa-calendar-plus"}], nomeUsuario: "Marcelo" }
+    preco:150 ,data:{valor:"17/06 - 10:00",usuario:null, icon:"fa-solid fa-calendar-plus"}, nomeUsuario: "Marcelo" }
     );
 
-    const [pet, setPet] = useState([
-        {nomePet: "Chulé"}, {nomePet: "Milo"}, {nomePet: "Gato"}
-    ]
+    const [pet, setPet] = useState(
+       {nomePet:"Chulé"}
+    
     )
-
-
-    const listaData = () => {
-        var lista = [];
-        service.data.map((a,i)=>{
-            var obj = {value:a.valor,label:a.valor};
-            lista.push(obj);
-        });
-        return lista;
-    }
-
-
-    const listaDataPet = () => {
-        var lista = [];
-        pet.map((a,i)=>{
-            var obj = {value:a.nomePet,label:a.nomePet};
-            lista.push(obj);
-        });
-        return lista;
-    }
-
-    const agendarHorario = (value) =>{
-        var servico = service;
-        var lista = servico.data;
-        lista.map((a, i) => {
-            if(a.valor === value.valor) {
-                a.usuario = service.nomeUsuario;
-            }
-        })
-        setService(servico);
-    }
 
     function handleSubmit(data) {
         alert(JSON.stringify(data))
@@ -63,7 +32,6 @@ const Servico = () => {
     
     return (
         
-
         <main>      
             <div className='main__container'>
                 <Banner>
@@ -107,48 +75,46 @@ const Servico = () => {
                     <div className='main__line line-size'/>
                     <div className='space_right'>
                         <div className='space_titlo'>
-
-                            Agendar Horário
+                            Informações
                         </div>
-                        <div className='space_services'>
-                            {/* {service.data.map((a, i) => {
-
-                            return(
-                                <Box>
-                                    <div>
-                                        <div onClick={()=>agendarHorario(a)} className='box-icon-date'>
-                                        <i class={a.icon}></i>
-                                        </div>
-                                        <div className='data-service'>{a.valor}</div>
-                                    </div>
-                                </Box>
-                                );
-
-                            })} */}
+                            <Box>
+                                <div className='box-icon box-icon-price'>
+                                    Hora
+                                </div>
+                                <div className='price-service'>{service.data.valor}</div>
+                            </Box>
+                            <Box>
+                                <div className='box-icon box-icon-price'>
+                                    Pet
+                                </div>
+                                <div className='price-service'>{pet.nomePet}</div>
+                            </Box>
                             <Form className='form' onSubmit={handleSubmit}>
+                                <div className='space_titlo'>
+                                    Nota
+                                </div>
                                 <div className='form-group'>
-                                    <Select name="horario" type="horario" options={listaData()} />
+                                    <Input name="score" type="number" className='input' />
                                 </div>
                             
                                 <div className='space_titlo'>
-                                    Selecionar Pet
+                                    Feedback
                                 </div>
                                 <div className='space_services'>
                                     
                                         <div className='form-group'>
-                                            <Select name="pet" type="pet" options={listaDataPet()} />
+                                            <Input name="feedback" type="text" className='input' />
                                         </div>
 
                                 </div>
                                 <div className='line'>
-                                    <Button type="submit">Contratar</Button>
+                                    <Button type="submit">Enviar Feedback</Button>
                                 </div>
                                 </Form>
 
-
                         </div>
                         
-                    </div>
+                    
 
                     
                 </div>

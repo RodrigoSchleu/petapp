@@ -2,9 +2,9 @@ import './styles.css';
 
 import { Form } from '@unform/web';
 import React from 'react';
-
 import Button from '../Button';
 import Input from '../Input';
+import InputMask from '../InputMask';
 
 export default function SingIn() {
 
@@ -32,7 +32,9 @@ export default function SingIn() {
                 </div>
                 <div className='form-group'>
                     <label>Telefone</label>
-                    <Input name="telefone" type="text" className='input' />
+
+                    <InputMask mask="(99) 99999-9999" name="phone" type="text" className='input' />
+
                 </div>
             </div>
             <div className='line'>
@@ -48,11 +50,13 @@ export default function SingIn() {
             <div className='line'>
                 <div className='form-group'>
                     <label>Cpf</label>
-                    <Input name="cpf" type="text" className='input' />
+
+                    <InputMask mask="999.999.999-99" name="cpf" type="text" className='input' />
                 </div>
                 <div className='form-group'>
                     <label>Cep</label>
-                    <Input name="cep" type="text" className='input' />
+                    <InputMask mask="99.999-999" name="cep" type="text" className='input' />
+
                 </div>
             </div>
             <div className='line'>
