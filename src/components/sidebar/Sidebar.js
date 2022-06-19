@@ -13,7 +13,7 @@ const Sidebar = ({ sidebarOpen, closeSidebar }) => {
                 <i onClick={() => closeSidebar()} className="fa-solid fa-x" id="sidebarIcon" aria-hidden="true"></i>
                 <div className="sidebar__profile">
                     <div className="sidebar__img">
-                        <img src={logo} alt="logo" />
+                        <img src={logo} alt="logo"/>
                     </div>
                 </div>
             </div>

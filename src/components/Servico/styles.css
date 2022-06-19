@@ -1,18 +1,39 @@
 .box-icon-service{
     width: 200px;
+    background: #00AFBB;
 }
 .box-icon-service>i{
     font-size: 90px;
 }
+.service-sombra{
+    width: calc(100% - 185px);
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    margin-left: 165px;
+    border-radius: 0 0 7px 0;
+    box-shadow: inset 1px -80px 30px -50px rgb(0 0 0 / 60%);
+}
+.box-service-title{
+    font-size: 30px;
+    font-weight: 600;
+    color: #f8f8ff;
+    text-transform: uppercase;
+    text-shadow: 0px 1px 0px rgb(0 0 0 / 25%);
+}
 .box-icon-price{
     background: #00AFBB;
-    width: 170px;
+    width: 130px;
     height: auto;
     padding: 10px;
     text-align: center;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 500;
     color: #F8F8FF;
+}
+.box-icon-price>img{
+    border-radius: 7px;
 }
 .line-size{
     height: 60vh;
@@ -28,7 +49,7 @@
 }
 .price-service,.data-service{
     padding: 10px 10px 10px 180px;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 600;
     text-align: center;
     color: #006269;
@@ -36,7 +57,28 @@
 .data-service{
     padding: 10px 10px 10px 80px;
 }
-
+.info-profile-box{
+    width: calc(100% - 150px);
+    height: 145px;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 7px; 
+    color: black;
+    /* border-bottom: 4px solid #00AFBB; */
+}
+.profile-box-text{
+    padding: 0 15px;
+}
+.profile-box-text>.profile-text{
+    font-weight: 400;
+    color: #7b7e80;
+}
+.profile-text>span{
+    font-weight: 600;
+    color: #006269;
+}
 .caixa-texto{
     padding: 10px;
     font-size: 18px;

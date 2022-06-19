@@ -8,7 +8,6 @@ import EditPetProfile from './components/EditPetProfile';
 import EditProfile from './components/EditProfile';
 import Main from './components/main';
 import Navbar from './components/nav';
-import PetCaretakerProfile from './components/PetCaretakerProfile';
 import PetProfile from './components/PetProfile';
 import Profile from './components/Profile';
 import Servico from './components/Servico';
@@ -36,9 +35,7 @@ function RouteUser() {
             <Route path="profilePet" element={<PetProfile/>} />
             <Route path="profilePet/editPetProfile" element={<EditPetProfile/>} />
             <Route path="service" element={<Servico/>} />
-            <Route path="/service/profilePetCaretaker" element={<PetCaretakerProfile />} />
             <Route path="contract" element={<ServicoContratado />} />
-            <Route path="/contract/profilePetCaretaker" element={<PetCaretakerProfile />} />
 
             <Route path="historic" element={<EditProfile />} />
           </Route>
