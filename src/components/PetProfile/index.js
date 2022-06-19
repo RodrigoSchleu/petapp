@@ -18,6 +18,8 @@ const PetProfile = () => {
         dataDeNascimento:"12/07/2020",anotacao:"Tem alergia a Areia de praia"},
         {nome:"Milo",tipo:"Cachorro",raça:"SRD",sexo:"Macho",tamanho:"Médio",
         dataDeNascimento:"24/12/2018",anotacao:"Tem pele Sensivel, evitar areia e terra"},
+        {nome:"Patolino",tipo:"Cachorro",raça:"Pincher",sexo:"Macho",tamanho:"pequeno",
+        dataDeNascimento:"24/12/2018",anotacao:"Não é sociável com outros cachorros"}
     ]
        );
     

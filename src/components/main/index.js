@@ -85,7 +85,7 @@ const Main = () => {
                     <div className='main__line' />
                     <div className='space_right'>
                         <div className='space_titlo'>
-                            Conheça Nossos Parceiros!
+                            Conheça Nossos Parceiros!!
                         </div>
                         <div className='space_services'>
                             {parceiros.map((a, i) => {
