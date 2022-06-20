@@ -18,7 +18,7 @@ const EditProfile = () => {
         <main>
             <div className='main__container'>
                 <Form className='form' onSubmit={handleSubmit}>
-                <h1>Dados Pessoais</h1>
+                    <h1>Dados Pessoais</h1>
                     <div className='form-group'>
                         <label>Nome</label>
                         <Input name="petownername" type="text" className='input' />
@@ -75,10 +75,10 @@ const EditProfile = () => {
                         <label>Complemento</label>
                         <Input name="complement" type="text" className='input' />
                     </div>
-                    <Button type="submit">Atualizar Dados</Button>
-
-                    <a><Link to="/profile"><Button styleType='footer'>Voltar</Button></Link></a>
-
+                    <div className="line-button-box">
+                        <Button type="submit">Atualizar Dados</Button>
+                        <Link to="/profile"><Button styleType='guide'>Voltar</Button></Link>
+                    </div>
                 </Form>
 
             </div>

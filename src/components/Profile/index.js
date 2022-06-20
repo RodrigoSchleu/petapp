@@ -1,11 +1,12 @@
 import './styles.css';
 import React from 'react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Button from '../Button';
 
 
 const Profile = () => {
+    let { userId } = useParams();
 
     const [usuario,setUsuario] = useState(JSON.parse(localStorage.getItem("usuario")));
 
@@ -45,7 +46,7 @@ const Profile = () => {
             </div>
             
             <div className="sidebar__menu">
-                <a><Link reloadDocument to="editProfile"><Button styleType='dark' active={true}>Editar Perfil</Button></Link></a>
+                <Link reloadDocument to="editProfile"><Button styleType='dark' active={true}>Editar Perfil</Button></Link>
             </div>
         
         </main>

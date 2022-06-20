@@ -1,21 +1,25 @@
 import './styles.css';
 
 import { Form } from '@unform/web';
-import React from 'react';
+import React, {useRef} from 'react';
 
 import Button from '../Button';
 import Input from '../Input';
 import { Link } from 'react-router-dom';
 
 const CreatePet = () => {
+    const formRef = useRef(null);
+
     function handleSubmit(data) {
+        var usuarioid = JSON.parse(localStorage.getItem("usuario")).Id
+        data.petOwnerId = usuarioid
         alert(JSON.stringify(data))
     }
     return (
         <main>
             <div className='main__container'>
 
-                <Form className='form' onSubmit={handleSubmit}>
+                <Form className='form' ref={formRef} onSubmit={handleSubmit}>
                     <div className='form-group'>
                         <label>Nome</label>
                         <Input name="name" type="text" className='input' />
@@ -23,7 +27,7 @@ const CreatePet = () => {
 
                     <div className='form-group'>
                         <label>Tipo de Animal</label>
-                        <Input name="pettype" type="text" className='input' />
+                        <Input name="type" type="text" className='input' />
                     </div>
 
                     <div className='form-group'>
@@ -43,17 +47,17 @@ const CreatePet = () => {
 
                     <div className='form-group'>
                         <label>Data de Nascimento</label>
-                        <Input name="borndate" type="date" className='input' />
+                        <Input name="bornDate" type="date" className='input' />
                     </div>
 
                     <div className='form-group'>
                         <label>Observações</label>
                         <Input name="note" type="text" className='input' />
                     </div>
-
-
-                    <Button type="submit">Criar Pet</Button>
-                    <a><Link to="/profilePet"><Button styleType='footer'>Voltar</Button></Link></a>
+                    <div className="line-button-box">
+                        <Button type="submit">Adicionar Pet</Button>
+                        <Link to="/profilePet"><Button styleType='guide'>Voltar</Button></Link>
+                    </div>
                 </Form>
 
             </div>

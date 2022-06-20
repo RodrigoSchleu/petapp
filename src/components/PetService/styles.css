@@ -1,0 +1,14 @@
+.box-space-services{
+    display: flex;
+    gap: 15px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+/* .box-space-pets>div{
+    width: calc(50% - 10px);
+} */
+.box-space-services>div{
+    width: calc(50% - 10px);
+}

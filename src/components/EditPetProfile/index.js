@@ -51,11 +51,10 @@ const EditPetProfile = () => {
                         <label>Observações</label>
                         <Input name="note" type="text" className='input' />
                     </div>
-
-                    <br></br>
-                    <Button type="submit">Atualizar Dados</Button>
-                    <br></br>
-                    <a><Link to="/profilePet"><Button styleType='footer'>Voltar</Button></Link></a>
+                    <div className="line-button-box">
+                        <Button type="submit">Atualizar Dados</Button>
+                        <Link to="/profilePet"><Button styleType='guide'>Voltar</Button></Link>
+                    </div>
                 </Form>
 
             </div>
