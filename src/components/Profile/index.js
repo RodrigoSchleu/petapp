@@ -6,6 +6,7 @@ import Button from '../Button';
 import Input from '../Input';
 import InputMask from '../InputMask';
 import { Form } from '@unform/web';
+import Api from '../../Api';
 
 
 const Profile = () => {
