@@ -1,4 +1,5 @@
 import './Navbar.css';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Navbar = ({ sidebarOpen, openSidebar }) => {
     return (
@@ -12,12 +13,9 @@ const Navbar = ({ sidebarOpen, openSidebar }) => {
             </div>
 
             <div className='navbar__right'>
-                <a href='#'>
-                    <i class="fa-solid fa-bell"></i>
-                </a>
-                <a href='#'>
-                    <i class="fa-solid fa-gear"></i>
-                </a>
+                <Link to='profile'><i class="fa-solid fa-user"></i></Link>
+                <Link to='profilePet'><i class="fa-solid fa-paw"></i></Link>
+                <Link to='profile/editProfile'><i class="fa-solid fa-gear"></i></Link>
             </div>
         </nav>
     );

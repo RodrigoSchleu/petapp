@@ -131,6 +131,10 @@ const Servico = () => {
                             </Box>
                             <Form className='form' onSubmit={handleSubmit}>
                                 <div className='form-group'>
+                                    <label>Selecionar Data</label>
+                                    <Select name="pet" type="pet" placeholder='Escolha a data de agendamento' options={listaDataPet()} />
+                                </div>
+                                <div className='form-group'>
                                     <label>Selecionar Horário</label>
                                     <Select name="pet" type="pet" placeholder='Escolha o horário de agendamento' options={listaDataPet()} />
                                 </div>
