@@ -26,7 +26,7 @@ const Servico = () => {
     const [service, setService] = useState(
         {
             nome: "Passeio", tipo: "Passeios", range: "Barra", description: "Passeio individual com cachorro no porto da Barra durante 30 minutos",
-            preco: 150, data: , nomeUsuario: "Marcelo"
+            preco: 150, data: { valor: "17/06 - 10:00", usuario: null, icon: "fa-solid fa-calendar-plus" }, nomeUsuario: "Marcelo"
         }
     );
 
