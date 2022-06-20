@@ -23,29 +23,6 @@ const Profile = () => {
     });
     return (
         <main>
-            {/* <div className='main__container'>
-            {Object.keys(usuario).map((a, i) => {
-                return(
-                    <div className='profile-box-text'>
-                        <div>
-                        {a}:<br/>
-                        <span>{usuario[a]}</span>
-                        </div>
-                    </div>
-                );
-            })}
-            </div>
-
-            <div className='main__container'>
-            {Object.keys(endereco).map((a, i) => {
-                return(
-                    <div>
-                        <div>{a}</div>
-                        <div>{endereco[a]}</div>
-                    </div>
-                );
-            })}
-            </div> */}
             <div className='main__container'>
                 <Form className='form'>
                 <h1>Dados Pessoais</h1>
@@ -109,7 +86,6 @@ const Profile = () => {
                         <label>Complemento</label>
                         <Input name="complement" type="text" className='input' placeholder={endereco.complemento} disabled />
                     </div>
-
                 </Form>
             <br></br>
             
@@ -117,7 +93,6 @@ const Profile = () => {
                 <a><Link reloadDocument to="editProfile"><Button styleType='dark' active={true}>Editar Perfil</Button></Link></a>
             </div>
             </div>
-        
         </main>
     );
 }
