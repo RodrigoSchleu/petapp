@@ -36,8 +36,9 @@ const PetProfile = () => {
             <div className='main__container'>
                 <div className='box-space-pets'>
                     <Link reloadDocument to="newPet">
-                        <Button styleType='guide'>Adicionar Pet</Button>
+                        <Button styleType='guide'>Adicionar novo Pet</Button>
                     </Link>
+                    <h1 style={{margin: 0}}>Meus Pets</h1>
                     {pet.map((a, i) => {
                         return (
                             <Box>
@@ -84,6 +85,7 @@ const PetProfile = () => {
                                     <Link reloadDocument to="editPetProfile">
                                         <Button styleType='dark'>Editar Perfil</Button>
                                     </Link>
+                                    <Button styleType='delete'>Deletar Perfil</Button>
                                     <Link reloadDocument to="petService">
                                         <Button styleType='contratar'>Contratar Serviço</Button>
                                     </Link>

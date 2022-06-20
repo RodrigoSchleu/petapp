@@ -12,22 +12,23 @@ import Api from '../../Api';
 const Profile = () => {
     let { userId } = useParams();
 
-    const [usuario,setUsuario] = useState(JSON.parse(localStorage.getItem("usuario")));
+    const [usuario, setUsuario] = useState(JSON.parse(localStorage.getItem("usuario")));
 
-    const [endereco,setEndereco] = useState({
-        estado:"BA",
-        cidade:"Salvador",
-        bairro:"Pituba",
-        rua:"Alameda Florença",
-        numero:"56",
-        cep:"41830-460",
-        complemento:"Edifício Tulio, Apartamento 904"
+    const [endereco, setEndereco] = useState({
+        estado: "BA",
+        cidade: "Salvador",
+        bairro: "Pituba",
+        rua: "Alameda Florença",
+        numero: "56",
+        cep: "41830-460",
+        complemento: "Edifício Tulio, Apartamento 904"
     });
     return (
         <main>
             <div className='main__container'>
-                <Form className='form'>
+                <Link reloadDocument to="editProfile"><Button styleType='dark'>Editar Perfil</Button></Link>
                 <h1>Dados Pessoais</h1>
+                <Form className='form'>
                     <div className='form-group'>
                         <label>Nome</label>
                         <Input name="petownername" type="text" className='input' placeholder={usuario.Nome} disabled />
@@ -35,9 +36,12 @@ const Profile = () => {
 
                     <div className='form-group'>
                         <label>Sobrenome</label>
-                        <Input name="lastname" type="text" className='input' placeholder={usuario.Sobrenome} disabled  />
+                        <Input name="lastname" type="text" className='input' placeholder={usuario.Sobrenome} disabled />
                     </div>
-
+                    <div className='form-group'>
+                        <label>Email</label>
+                        <Input name="email" type="text" className='input' placeholder={usuario.Email} disabled />
+                    </div>
                     <div className='form-group'>
                         <label>Telefone</label>
                         <InputMask mask="(99) 99999-9999" name="phone" type="text" className='input' placeholder={usuario.Telefone} disabled />
@@ -54,10 +58,6 @@ const Profile = () => {
                     <div className='form-group'>
                         <label>Data de Nascimento</label>
                         <Input name="borndate" type="text" className='input' placeholder={usuario.DataDeNascimento} disabled />
-                    </div>
-                    <div className='form-group'>
-                        <label>Email</label>
-                        <Input name="email" type="text" className='input' placeholder={usuario.Mail} disabled />
                     </div>
                     <h1>Endereço</h1>
                     <div className='form-group'>
@@ -89,11 +89,6 @@ const Profile = () => {
                         <Input name="complement" type="text" className='input' placeholder={endereco.complemento} disabled />
                     </div>
                 </Form>
-            <br></br>
-            
-            <div className="sidebar__menu">
-                <Link reloadDocument to="editProfile"><Button styleType='dark' active={true}>Editar Perfil</Button></Link>
-            </div>
             </div>
         </main>
     );

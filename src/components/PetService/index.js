@@ -20,6 +20,7 @@ const PetService = () => {
     return (
         <main>
             <div className='main__container'>
+                <h1 style={{marginTop: 0}}>Serviços Disponíveis</h1>
                 <div className='box-space-services'>
                     {servico.map((a, i) => {
                         return (
@@ -36,8 +37,8 @@ const PetService = () => {
                     })}
                 </div>
                 <div className="line-button-box">
-                        <Link to="/profilePet"><Button styleType='guide'>Voltar</Button></Link>
-                    </div>
+                    <Link to="/profilePet"><Button styleType='guide'>Voltar</Button></Link>
+                </div>
             </div>
         </main>
     );

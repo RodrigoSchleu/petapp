@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import vetpet from '../../assets/vetpet.png';
-import logo from '../../assets/avatar.png';
+import avatar from '../../assets/avatar.png';
 import Banner from '../Banner';
 import Box from '../Box';
 import Button from '../Button';
@@ -80,12 +80,12 @@ const Servico = () => {
                         <i className='fa-solid fa-paw'></i>
                     </div>
                     <img src={vetpet} alt="Anúncio"></img>
-                    <div className='service-sombra'><div className='box-service-title'>{service.tipo} com {service.nomeUsuario}</div></div>
+                    {/* <div className='service-sombra'><div className='box-service-title'></div></div> */}
                 </Banner>
                 <div className='main_spaces'>
                     <div className='space_left'>
                         <div className='space_titlo'>
-                            Sobre o serviço
+                        {service.tipo} com {service.nomeUsuario}
                         </div>
                         <div className='space_services'>
                             <Box><div className='caixa-texto'>
@@ -93,7 +93,7 @@ const Servico = () => {
                             </div></Box>
                             <Box>
                                 <div className='box-icon box-icon-price'>
-                                    <img src={logo} alt="logo" />
+                                    <img src={avatar} alt="logo" />
                                 </div>
                                 <div className='info-profile-box'>
                                     {Object.keys(usuario).map((a, i) => {
@@ -130,6 +130,10 @@ const Servico = () => {
                                 <div className='price-service'>{service.range}</div>
                             </Box>
                             <Form className='form' onSubmit={handleSubmit}>
+                                <div className='form-group'>
+                                    <label>Selecionar Horário</label>
+                                    <Select name="pet" type="pet" placeholder='Escolha o horário de agendamento' options={listaDataPet()} />
+                                </div>
                                 <Button type="submit">Solicitar Agendamento</Button>
                             </Form>
                         </div>

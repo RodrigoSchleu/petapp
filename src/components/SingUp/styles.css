@@ -18,6 +18,9 @@ label{
 }
 .form-group{
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 .input {
     width: calc(100% - 30px);
@@ -32,6 +35,8 @@ label{
 }
 h1{
     font-size: 30px;
+    text-transform: uppercase;
+    margin: 10px 0;
     color: #006269;
 }
 .line-button-box{

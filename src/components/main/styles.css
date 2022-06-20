@@ -173,7 +173,9 @@
         background: rgba(0, 0, 0, 0.2);
         border-radius: 10px;
     }
-
+    .line-size {
+        height: 3px !important;
+    }
     .menu-bottom {
         width: 100%;
         height: 60px;

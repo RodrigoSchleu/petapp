@@ -19,9 +19,9 @@ const Sidebar = ({ sidebarOpen, closeSidebar }) => {
             </div>
             <div className='sidebar__area'>
                 <div className="sidebar__menu">
-                    <a><Link to="/"><Button styleType='dark' active={true}>Home</Button></Link></a>
-                    <a><Link to="profile"><Button styleType='dark'>Meu Perfil</Button></Link></a>
-                    <a><Link to="profilePet"><Button styleType='dark'>Meus Pets</Button></Link></a>
+                    <a><Link to="/" onClick={() => closeSidebar()}><Button styleType='dark' active={true}>Home</Button></Link></a>
+                    <a><Link to="profile" onClick={() => closeSidebar()}><Button styleType='dark'>Meu Perfil</Button></Link></a>
+                    <a><Link to="profilePet" onClick={() => closeSidebar()}><Button styleType='dark'>Meus Pets</Button></Link></a>
                 </div>
             </div>
             <div className='sidebar__footer'>
