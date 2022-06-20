@@ -22,6 +22,12 @@ const Servico = () => {
             preco: 150, data: [{ valor: "17/06 - 10:00", usuario: null, icon: "fa-solid fa-calendar-plus" }, { valor: "17/06 - 12:00", usuario: null, icon: "fa-solid fa-calendar-plus" }, { valor: "17/06 - 14:00", usuario: null, icon: "fa-solid fa-calendar-plus" }], nomeUsuario: "Marcelo"
         }
     );
+
+    
+
+    
+
+
     const [usuario, setUsuario] = useState({
 
         Nome: "Francelo",
@@ -35,39 +41,56 @@ const Servico = () => {
         { nomePet: "Chulé" }, { nomePet: "Milo" }, { nomePet: "Gato" }
     ])
 
+    const [data, setData] = useState([{data:"20-04-2023 "},{data:"21-04-2023 "},{data:"22-04-2023 "},])
+    const [dataSubmit, setDataSubmit] = useState();
+
     const listaData = () => {
         var lista = [];
-        service.data.map((a, i) => {
-            var obj = { value: a.valor, label: a.valor };
-            lista.push(obj);
-        });
-        return lista;
-    }
 
-
-    const listaDataPet = () => {
-        var lista = [];
-        pet.map((a, i) => {
-            var obj = { value: a.nomePet, label: a.nomePet };
-            lista.push(obj);
-        });
-        return lista;
-    }
-
-    const agendarHorario = (value) => {
-        var servico = service;
-        var lista = servico.data;
-        lista.map((a, i) => {
-            if (a.valor === value.valor) {
-                a.usuario = service.nomeUsuario;
+        data.forEach(datahora => {
+            const selectValue = {
+                value:datahora.data,
+                label:datahora.data
             }
+            lista.push(selectValue)
         })
-        setService(servico);
+        return lista;
     }
+
+    const [hora, sethora] = useState([{hora:"12:00"},{hora:"14:00"},{hora:"16:00"}])
+    const [horaSubmit, setHoraSubmit] = useState();
+
+    const listaHora = () => {
+        var lista = [];
+
+        hora.forEach(horadata => {
+            const selectValue = {
+                value:horadata.hora,
+                label:horadata.hora
+            }
+            lista.push(selectValue)
+        })
+        return lista;
+    }
+
+
+    
 
     function handleSubmit(data) {
-        alert(JSON.stringify(data))
-        // { email: 'test@example.com', password: '123456' }
+        if (dataSubmit!=null && horaSubmit!=null){
+
+            console.log(dataSubmit)
+            const dataJSON = {
+    
+                data:dataSubmit.value+horaSubmit.va
+            }
+            alert(JSON.stringify(dataJSON))
+        }
+        else {
+            alert("Selecione todos os campos")
+        }
+        
+ 
     }
 
     return (
@@ -80,7 +103,6 @@ const Servico = () => {
                         <i className='fa-solid fa-paw'></i>
                     </div>
                     <img src={vetpet} alt="Anúncio"></img>
-                    {/* <div className='service-sombra'><div className='box-service-title'></div></div> */}
                 </Banner>
                 <div className='main_spaces'>
                     <div className='space_left'>
@@ -132,13 +154,14 @@ const Servico = () => {
                             <Form className='form' onSubmit={handleSubmit}>
                                 <div className='form-group'>
                                     <label>Selecionar Data</label>
-                                    <Select name="pet" type="pet" placeholder='Escolha a data de agendamento' options={listaDataPet()} />
+                                    <Select onChange={value => setDataSubmit(value)} name="data" type="text" placeholder='Escolha a data de agendamento'  options={listaData()} />
                                 </div>
                                 <div className='form-group'>
-                                    <label>Selecionar Horário</label>
-                                    <Select name="pet" type="pet" placeholder='Escolha o horário de agendamento' options={listaDataPet()} />
+                                    <label>Selecionar Hora</label>
+                                    <Select onChange={value => setHoraSubmit(value)} name="hora" type="text" placeholder='Escolha o horário de agendamento'  options={listaHora()} />
                                 </div>
-                                <Button type="submit">Solicitar Agendamento</Button>
+                                
+                                <Button  type="submit">Solicitar Agendamento</Button>
                             </Form>
                         </div>
 

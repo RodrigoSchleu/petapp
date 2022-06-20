@@ -13,19 +13,19 @@ import Api from '../../Api';
 const PetProfile = () => {
     const [pet, setPet] = useState([
         {
-            nome: "Chulé", tipo: "Cachorro", raça: "SRD", sexo: "Macho", tamanho: "pequeno",
+            id:1, nome: "Chulé", tipo: "Cachorro", raça: "SRD", sexo: "Macho", tamanho: "pequeno",
             dataDeNascimento: "20/03/1995", anotacao: "Tem alergia a amendoin"
         },
         {
-            nome: "Gato do pitagoras", tipo: "Gato", raça: "Persa da alemanha", sexo: "Femea", tamanho: "pequeno",
+            id:2, nome: "Gato do pitagoras", tipo: "Gato", raça: "Persa da alemanha", sexo: "Femea", tamanho: "pequeno",
             dataDeNascimento: "12/07/2020", anotacao: "Tem alergia a Areia de praia"
         },
         {
-            nome: "Milo", tipo: "Cachorro", raça: "SRD", sexo: "Macho", tamanho: "Médio",
+            id:3, nome: "Milo", tipo: "Cachorro", raça: "SRD", sexo: "Macho", tamanho: "Médio",
             dataDeNascimento: "24/12/2018", anotacao: "Tem pele Sensivel, evitar areia e terra"
         },
         {
-            nome: "Patolino", tipo: "Cachorro", raça: "Pincher", sexo: "Macho", tamanho: "pequeno",
+            id:4, nome: "Patolino", tipo: "Cachorro", raça: "Pincher", sexo: "Macho", tamanho: "pequeno",
             dataDeNascimento: "24/12/2018", anotacao: "Não é sociável com outros cachorros Não é sociável com outros cachorros"
         }
     ]
