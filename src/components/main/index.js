@@ -10,6 +10,7 @@ import Agromix from '../../assets/Agromix.png';
 import petshoppertodemim from '../../assets/petshoppertodemim.png';
 import amepet from '../../assets/amepet.png';
 import Banner from '../Banner';
+import Api from '../../Api';
 
 
 const Main = () => {

@@ -6,11 +6,16 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import Button from '../Button';
 import Input from '../Input';
+import Api from '../../Api';
 
 
 export default function SingIn() {
+
+    Api.get("users");
+
     let navigate = useNavigate();
     function handleSubmit(data) {
+
         localStorage.setItem("usuario", JSON.stringify({
             Id: 1,
             Nome: "Rodrigo",

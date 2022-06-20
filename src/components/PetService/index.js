@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import Button from '../Button';
 import Box from '../Box';
 import image from '../../assets/caoputo.png';
+import Api from '../../Api';
 
 const PetService = () => {
     const [servico, setServico] = useState([

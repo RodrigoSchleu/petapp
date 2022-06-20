@@ -10,7 +10,7 @@ import Banner from '../Banner';
 import Box from '../Box';
 import Button from '../Button';
 import Select from '../Select';
-
+import Api from '../../Api';
 
 const Servico = () => {
 

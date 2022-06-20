@@ -6,6 +6,7 @@ import Button from '../Button';
 import Input from '../Input';
 import InputMask from '../InputMask';
 import { Link } from 'react-router-dom';
+import Api from '../../Api';
 
 export default function SingIn() {
 

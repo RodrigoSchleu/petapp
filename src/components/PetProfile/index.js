@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import Button from '../Button';
 import image from '../../assets/caoputo.png';
 import Box from '../Box';
+import Api from '../../Api';
 
 
 const PetProfile = () => {
