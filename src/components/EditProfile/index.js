@@ -8,8 +8,24 @@ import Input from '../Input';
 import InputMask from '../InputMask';
 
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+
+
 
 const EditProfile = () => {
+
+    const [usuario,setUsuario] = useState(JSON.parse(localStorage.getItem("usuario")));
+
+    const [endereco,setEndereco] = useState({
+        estado:"BA",
+        cidade:"Salvador",
+        bairro:"Pituba",
+        rua:"Alameda Florença",
+        numero:"56",
+        cep:"41830-460",
+        complemento:"Edifício Tulio, Apartamento 904"
+    });
+
     function handleSubmit(data) {
         alert(JSON.stringify(data))
         // { email: 'test@example.com', password: '123456' }
@@ -21,7 +37,7 @@ const EditProfile = () => {
                 <h1>Dados Pessoais</h1>
                     <div className='form-group'>
                         <label>Nome</label>
-                        <Input name="petownername" type="text" className='input' />
+                        <Input  name="petownername" type="text" className='input' />
                     </div>
 
                     <div className='form-group'>
