@@ -5,6 +5,7 @@ import React from 'react';
 import Button from '../Button';
 import Input from '../Input';
 import InputMask from '../InputMask';
+import { Link } from 'react-router-dom';
 
 export default function SingIn() {
 
@@ -79,7 +80,10 @@ export default function SingIn() {
                     <Input name="complemento" type="text" className='input' />
                 </div>
             </div>
-                <Button style={{alignSelf: 'center'}} type="submit">Cadastrar-se</Button>
+            <div className="line-button-box">
+                <Button type="submit">Cadastrar</Button>
+                <Link to="/"><Button styleType='guide'>Voltar</Button></Link>
+            </div>
         </Form>
     )
 }

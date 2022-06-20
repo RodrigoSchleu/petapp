@@ -2,7 +2,7 @@ import './App.css';
 
 import * as React from 'react';
 import { useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes,useParams  } from 'react-router-dom';
 
 import EditPetProfile from './components/EditPetProfile';
 import EditProfile from './components/EditProfile';

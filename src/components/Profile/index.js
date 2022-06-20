@@ -1,7 +1,7 @@
 import './styles.css';
 import React from 'react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Button from '../Button';
 import Input from '../Input';
 import InputMask from '../InputMask';
@@ -9,6 +9,7 @@ import { Form } from '@unform/web';
 
 
 const Profile = () => {
+    let { userId } = useParams();
 
     const [usuario,setUsuario] = useState(JSON.parse(localStorage.getItem("usuario")));
 
@@ -90,7 +91,7 @@ const Profile = () => {
             <br></br>
             
             <div className="sidebar__menu">
-                <a><Link reloadDocument to="editProfile"><Button styleType='dark' active={true}>Editar Perfil</Button></Link></a>
+                <Link reloadDocument to="editProfile"><Button styleType='dark' active={true}>Editar Perfil</Button></Link>
             </div>
             </div>
         </main>

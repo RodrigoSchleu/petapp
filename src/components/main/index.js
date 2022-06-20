@@ -1,7 +1,7 @@
 import './styles.css';
 
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 import banner from '../../assets/banner.png';
 import caoputo from '../../assets/caoputo.png';
@@ -13,6 +13,7 @@ import Banner from '../Banner';
 
 
 const Main = () => {
+    
     const [servicosContratados, setServicosContratados] = useState([
         { nomeUsuario: "Roger", tipo: "Passeios", data: "17/06 - 10:00" },
         { nomeUsuario: "João", tipo: "Adestramento Cão Puto", data: "20/06 - 10:00" },
@@ -88,7 +89,7 @@ const Main = () => {
                     <div className='main__line' />
                     <div className='space_right'>
                         <div className='space_titlo'>
-                            Conheça Nossos Parceiros!!
+                            Conheça Nossos Parceiros
                         </div>
                         <div className='space_services'>
                             {parceiros.map((a, i) => {

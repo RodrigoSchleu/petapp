@@ -9,6 +9,7 @@ import vetpet from '../../assets/vetpet.png';
 import Banner from '../Banner';
 
 const Main2 = () => {
+    
     const [servicosContratados, setServicosContratados] = useState([
         { nomeUsuario: "Roger", tipo: "Passeios", data: "17/06 - 10:00" },
         { nomeUsuario: "João", tipo: "Adestramento Cão Puto", data: "20/06 - 10:00" },

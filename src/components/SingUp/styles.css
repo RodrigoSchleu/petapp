@@ -8,6 +8,7 @@
 label{
     color: #7b7e80;
     font-weight: 400;
+    text-transform: uppercase;
 }
 .line {
     display: flex;
@@ -19,12 +20,25 @@ label{
     width: 100%;
 }
 .input {
-    width: -webkit-fill-available;
+    width: calc(100% - 30px);
     outline: none;
     padding: 10px 15px;
+    color: rgb(0 0 0 / 75%);
     border: 2px solid rgba(0,0,0,0.3);
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 500;
     border-radius: 7px;
+}
+h1{
+    font-size: 30px;
+    color: #006269;
+}
+.line-button-box{
+    width: 100%;
+    display: flex;
+    gap: 15px;
+}
+.line-button-box>a{
+    width: 100%;
 }

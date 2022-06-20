@@ -24,7 +24,7 @@ const Servico = () => {
     );
     const [usuario, setUsuario] = useState({
 
-        Nome: "Marcelo",
+        Nome: "Francelo",
         Sobrenome: "Passos de Moraes",
         Telefone: "(71) 99324-5289",
 
@@ -91,7 +91,32 @@ const Servico = () => {
                             <Box><div className='caixa-texto'>
                                 {service.description}
                             </div></Box>
-                            
+                            <Box>
+                                <div className='box-icon box-icon-price'>
+                                    <img src={logo} alt="logo" />
+                                </div>
+                                <div className='info-profile-box'>
+                                    {Object.keys(usuario).map((a, i) => {
+                                        return (
+                                            <div className='profile-box-text'>
+                                                <div className='profile-text'>
+                                                    {a}:<br />
+                                                    <span>{usuario[a]}</span>
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            </Box>
+                            <a href='https://api.whatsapp.com/send?phone=5571993245289&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20servi%C3%A7o%20na%20PetApp.' target='_blanck'><div className='button-whatsapp'>Entre em contato no whatsapp</div></a>
+                        </div>
+                    </div>
+                    <div className='main__line line-size' />
+                    <div className='space_right'>
+                        <div className='space_titlo'>
+                            Agendar este serviço
+                        </div>
+                        <div className='space_services'>
                             <Box>
                                 <div className='box-icon box-icon-price'>
                                     Preço
@@ -104,44 +129,9 @@ const Servico = () => {
                                 </div>
                                 <div className='price-service'>{service.range}</div>
                             </Box>
-                            <Box>
-                                <div className='box-icon box-icon-price'>
-                                    <img src={logo} alt="logo" />
-                                </div>
-                                <div className='info-profile-box'>
-                                    {Object.keys(usuario).map((a, i) => {
-                                        return (
-                                            <div className='profile-box-text'>
-                                                <div className='profile-text'>
-                                                    {a}:<br/>
-                                                    <span>{usuario[a]}</span>
-                                                </div>
-                                            </div>
-                                        );
-                                    })}
-                                </div>
-                            </Box>
-                        </div>
-                    </div>
-                    <div className='main__line line-size' />
-                    <div className='space_right'>
-                        <div className='space_titlo'>
-                            Agendar este serviço
-                        </div>
-                        <div className='space_services'>
                             <Form className='form' onSubmit={handleSubmit}>
-                                <div className='space_services'>
-
-                                    <div className='form-group'>
-                                        <label>Selecionar Pet</label>
-                                        <Select name="pet" type="pet" placeholder='Escolha o pet para este serviço' options={listaDataPet()} />
-                                    </div>
-
-                                </div>
                                 <Button type="submit">Solicitar Agendamento</Button>
                             </Form>
-
-
                         </div>
 
                     </div>

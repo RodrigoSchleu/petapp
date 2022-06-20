@@ -5,49 +5,39 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import Button from '../Button';
-
-
-
-
+import Box from '../Box';
+import image from '../../assets/caoputo.png';
 
 const PetService = () => {
-    const [servico,setServico] = useState([
-        {nome:"Passeios com Marcelo", regiao:"Barra", preco:150},
-        {nome:"Consulta AmePet", regiao:"Armação", preco:100},
-        {nome:"Creche da Titia", regiao:"Brotas", preco:125}
+    const [servico, setServico] = useState([
+        { nome: "Passeios com Marcelo", regiao: "Barra", preco: 150 },
+        { nome: "Consulta AmePet", regiao: "Armação", preco: 100 },
+        { nome: "Creche da Titia", regiao: "Brotas", preco: 125 }
     ]
-       );
-    
+    );
+
     return (
         <main>
-
-
-
-{servico.map((a, i) => {
-    return(
-        <div>
             <div className='main__container'>
-                
-                <div>
-                    <div>Serviço</div>
-                    <div>{a.nome}</div> 
-                </div>  
-                <div>
-                    <div>Região: {a.regiao}</div> 
+                <div className='box-space-services'>
+                    {servico.map((a, i) => {
+                        return (
+                            <Box>
+                                <div className='ad-img'>
+                                    <img src={image} alt='' />
+                                </div>
+                                <div className='ad-info'>
+                                    <div className='ad-title'>{a.nome}</div>
+                                    <Link reloadDocument to="service"><Button styleType='default'>Verificar Informações</Button></Link>
+                                </div>
+                            </Box>
+                        );
+                    })}
                 </div>
-                <div>
-                    <div>Preço: R$:{a.preco},00</div> 
-                </div>                  
-                
+                <div className="line-button-box">
+                        <Link to="/profilePet"><Button styleType='guide'>Voltar</Button></Link>
+                    </div>
             </div>
-            <div className="sidebar__menu">
-                <a><Link reloadDocument to="service"><Button styleType='dark' active={true}>Verificar Serviço</Button></Link></a>
-            </div>
-        </div>
-    );
-})}
-                <br></br><a><Link to="/profilePet"><Button styleType='footer'>Voltar</Button></Link></a>
-        
         </main>
     );
 }

@@ -5,78 +5,94 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import Button from '../Button';
-
-
-
+import image from '../../assets/caoputo.png';
+import Box from '../Box';
 
 
 const PetProfile = () => {
-    const [pet,setPet] = useState([
-        {nome:"Chulé",tipo:"Cachorro",raça:"SRD",sexo:"Macho",tamanho:"pequeno",
-        dataDeNascimento:"20/03/1995",anotacao:"Tem alergia a amendoin"},
-        {nome:"Gato",tipo:"Gato",raça:"Persa",sexo:"Macho",tamanho:"pequeno",
-        dataDeNascimento:"12/07/2020",anotacao:"Tem alergia a Areia de praia"},
-        {nome:"Milo",tipo:"Cachorro",raça:"SRD",sexo:"Macho",tamanho:"Médio",
-        dataDeNascimento:"24/12/2018",anotacao:"Tem pele Sensivel, evitar areia e terra"},
-        {nome:"Patolino",tipo:"Cachorro",raça:"Pincher",sexo:"Macho",tamanho:"pequeno",
-        dataDeNascimento:"24/12/2018",anotacao:"Não é sociável com outros cachorros"}
+    const [pet, setPet] = useState([
+        {
+            nome: "Chulé", tipo: "Cachorro", raça: "SRD", sexo: "Macho", tamanho: "pequeno",
+            dataDeNascimento: "20/03/1995", anotacao: "Tem alergia a amendoin"
+        },
+        {
+            nome: "Gato do pitagoras", tipo: "Gato", raça: "Persa da alemanha", sexo: "Femea", tamanho: "pequeno",
+            dataDeNascimento: "12/07/2020", anotacao: "Tem alergia a Areia de praia"
+        },
+        {
+            nome: "Milo", tipo: "Cachorro", raça: "SRD", sexo: "Macho", tamanho: "Médio",
+            dataDeNascimento: "24/12/2018", anotacao: "Tem pele Sensivel, evitar areia e terra"
+        },
+        {
+            nome: "Patolino", tipo: "Cachorro", raça: "Pincher", sexo: "Macho", tamanho: "pequeno",
+            dataDeNascimento: "24/12/2018", anotacao: "Não é sociável com outros cachorros Não é sociável com outros cachorros"
+        }
     ]
-       );
-    
+    );
+
     return (
         <main>
-
-
-
-{pet.map((a, i) => {
-    return(
-        <div>
             <div className='main__container'>
-                
-                <div>
-                    <div>Nome</div>
-                    <div>{a.nome}</div> 
+                <div className='box-space-pets'>
+                    <Link reloadDocument to="newPet">
+                        <Button styleType='guide'>Adicionar Pet</Button>
+                    </Link>
+                    {pet.map((a, i) => {
+                        return (
+                            <Box>
+                                <div className='box-icon' id='box-icon-pet'>
+                                    <img src={image} alt="logo" />
+                                </div>
+                                <div className='pet-column'>
+                                    <div className='profile-row-text'>
+                                        <div className='profile-text'>
+                                            Nome:<br />
+                                            <span>{a.nome}</span>
+                                        </div>
+                                        <div className='profile-text'>
+                                            Raça:<br />
+                                            <span>{a.raça}</span>
+                                        </div>
+                                        <div className='profile-text'>
+                                            Tipo:<br />
+                                            <span>{a.tipo}</span>
+                                        </div>
+                                    </div>
+                                    <div className='profile-row-text'>
+                                        <div className='profile-text'>
+                                            Data de Nacimento:<br />
+                                            <span>{a.dataDeNascimento}</span>
+                                        </div>
+                                        <div className='profile-text'>
+                                            Sexo:<br />
+                                            <span>{a.sexo}</span>
+                                        </div>
+                                        <div className='profile-text'>
+                                            Porte:<br />
+                                            <span>{a.tamanho}</span>
+                                        </div>
+                                    </div>
+                                    <div className='profile-row-text'>
+                                        <div className='profile-text'>
+                                            Anotações:<br />
+                                            <span>{a.anotacao}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="line-button-pet">
+                                    <Link reloadDocument to="editPetProfile">
+                                        <Button styleType='dark'>Editar Perfil</Button>
+                                    </Link>
+                                    <Link reloadDocument to="petService">
+                                        <Button styleType='contratar'>Contratar Serviço</Button>
+                                    </Link>
+                                </div>
+                            </Box>
+                        );
+                    })}
                 </div>
-                <div>
-                    <div>Tipo</div>
-                    <div>{a.tipo}</div> 
-                </div>
-                <div>
-                    <div>Raça</div>
-                    <div>{a.raça}</div> 
-                </div>
-                <div>
-                    <div>Sexo</div>
-                    <div>{a.sexo}</div> 
-                </div>
-                <div>
-                    <div>Porte</div>
-                    <div>{a.tamanho}</div> 
-                </div>
-                <div>
-                    <div>Data de Nacimento</div>
-                    <div>{a.dataDeNascimento}</div> 
-                </div>
-                <div>
-                    <div>Anotações</div>
-                    <div>{a.anotacao}</div> 
-                </div>
-                        
-            </div>
-            <div className="sidebar__menu">
-                <a><Link reloadDocument to="editPetProfile"><Button styleType='dark' active={true}>Editar Perfil</Button></Link></a>
-            </div>
-            <div className="sidebar__menu">
-                <a><Link reloadDocument to="petService"><Button styleType='dark' active={true}>Contratar Serviço</Button></Link></a>
-            </div>
-        </div>
-    );
-})}
-
-            <div className="sidebar__menu">
-                <a><Link reloadDocument to="newPet"><Button styleType='dark' active={true}>Adicionar Pet</Button></Link></a>
-            </div>        
-        </main>
+            </div >
+        </main >
     );
 }
 
