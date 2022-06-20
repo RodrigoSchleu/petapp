@@ -2,6 +2,7 @@ import './styles.css';
 
 import { Form } from '@unform/web';
 import React from 'react';
+import { useEffect, useState } from 'react';
 import Button from '../Button';
 import Input from '../Input';
 import InputMask from '../InputMask';
@@ -10,9 +11,19 @@ import Api from '../../Api';
 
 export default function SingIn() {
 
+    const [cpf, setCpf] = useState()
+    const [rg, setRg] = useState()
+    const [nome, setNome] = useState()
+    const [sobrenome, setSobrenome] = useState()
+    const [telefone, setTelefone] = useState()
+    const [email, setEmail] = useState()
+    const [nascimento, setNascimento] = useState()
+    const [senha, setSenha] = useState()
+
     function handleSubmit(data) {
-        alert(JSON.stringify(data))
-        // { email: 'test@example.com', password: '123456' }
+        
+            alert(JSON.stringify(data))
+ 
     }
 
     return (
@@ -20,7 +31,7 @@ export default function SingIn() {
             <div className='line'>
                 <div className='form-group'>
                     <label>Nome</label>
-                    <Input name="nome" type="text" className='input' />
+                    <Input onTextChange={text => setNome(text)} name="nome" type="text" className='input' />
                 </div>
                 <div className='form-group'>
                     <label>Sobrenome</label>
@@ -56,12 +67,19 @@ export default function SingIn() {
                     <InputMask mask="999.999.999-99" name="cpf" type="text" className='input' />
                 </div>
                 <div className='form-group'>
-                    <label>Cep</label>
-                    <InputMask mask="99.999-999" name="cep" type="text" className='input' />
+                    <label>RG</label>
+                    <InputMask mask="99999999-99" name="rg" type="text" className='input' />
 
                 </div>
             </div>
             <div className='line'>
+                <div className='form-group'>
+                    <label>Data de Nascimento</label>
+
+                    <InputMask mask="99-99-9999" name="bornDate" type="text" className='input' />
+                </div>
+            </div>
+            {/* <div className='line'>
                 <div className='form-group'>
                     <label>Estado</label>
                     <Input name="estado" type="text" className='input' />
@@ -80,7 +98,7 @@ export default function SingIn() {
                     <label>Complemento</label>
                     <Input name="complemento" type="text" className='input' />
                 </div>
-            </div>
+            </div> */}
             <div className="line-button-box">
                 <Button type="submit">Cadastrar</Button>
                 <Link to="/"><Button styleType='guide'>Voltar</Button></Link>

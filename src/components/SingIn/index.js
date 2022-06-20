@@ -11,7 +11,7 @@ import Api from '../../Api';
 
 export default function SingIn() {
 
-    Api.get("users");
+    
 
     let navigate = useNavigate();
     function handleSubmit(data) {
@@ -27,8 +27,7 @@ export default function SingIn() {
             Email: data.email
         }));
         document.location.reload(true);
-        //alert(JSON.stringify(data))
-        // { email: 'test@example.com', password: '123456' }
+        
     }
 
     return (
