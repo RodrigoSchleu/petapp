@@ -42,36 +42,36 @@ const Main = () => {
                                 var icone;
                                 var descricao;
                                 var color;
-                                switch(a.tipo){
+                                switch (a.tipo) {
                                     case "Hospital Veterinário":
-                                        descricao=a.nomeUsuario+" - "+a.tipo;
-                                        color="#00AFBB";
-                                        icone="fa-solid fa-house-chimney-medical";
+                                        descricao = a.nomeUsuario + " - " + a.tipo;
+                                        color = "#00AFBB";
+                                        icone = "fa-solid fa-house-chimney-medical";
                                         break;
                                     case "Adestramento Cão Puto":
-                                        descricao=a.tipo+" com "+a.nomeUsuario;
-                                        color="#2594E4";
-                                        icone="fa-solid fa-bone";
+                                        descricao = a.tipo + " com " + a.nomeUsuario;
+                                        color = "#2594E4";
+                                        icone = "fa-solid fa-bone";
                                         break;
                                     case "Passeios":
-                                        descricao=a.tipo+" com "+a.nomeUsuario;
-                                        color="#FBBB00";
-                                        icone="fa-solid fa-dog";
+                                        descricao = a.tipo + " com " + a.nomeUsuario;
+                                        color = "#FBBB00";
+                                        icone = "fa-solid fa-dog";
                                         break;
                                     case "Hotel":
-                                        descricao=a.nomeUsuario+" - "+a.tipo;
-                                        color="#F14336";
-                                        icone="fa-solid fa-bell-concierge";
+                                        descricao = a.nomeUsuario + " - " + a.tipo;
+                                        color = "#F14336";
+                                        icone = "fa-solid fa-bell-concierge";
                                         break;
                                     case "Cuidados da titia":
-                                        descricao=a.tipo+" com "+a.nomeUsuario;
-                                        color="#28B446";
-                                        icone="fa-solid fa-hand-holding-heart";
+                                        descricao = a.tipo + " com " + a.nomeUsuario;
+                                        color = "#28B446";
+                                        icone = "fa-solid fa-hand-holding-heart";
                                         break;
                                 }
-                                return(
-                                    <div className='box-service'>
-                                        <Link to="contract">
+                                return (
+                                    <Link to="contract">
+                                        <div className='box-service'>
                                             <div className='box-icon' style={{ background: color }}>
                                                 <i class={icone}></i>
                                             </div>
@@ -79,8 +79,8 @@ const Main = () => {
                                                 <div className='box-title'>{descricao}</div>
                                                 <div className='box-date'>{a.data}</div>
                                             </div>
-                                        </Link>
-                                    </div>
+                                        </div>
+                                    </Link>
                                 );
                             })}
                         </div>
@@ -93,22 +93,22 @@ const Main = () => {
                         <div className='space_services'>
                             {parceiros.map((a, i) => {
                                 var imagem;
-                                
-                              
-                                switch(a.tipo){
+
+
+                                switch (a.tipo) {
                                     case "petcenter":
-                                        imagem=Agromix;
+                                        imagem = Agromix;
                                         break;
                                     case "petshop":
-                                        imagem=petshoppertodemim;
+                                        imagem = petshoppertodemim;
                                         break;
                                     case "clinica":
-                                        imagem=amepet;
+                                        imagem = amepet;
                                         break;
                                 }
-                                return(<div className='ad-service'>
+                                return (<div className='ad-service'>
                                     <div className='ad-img'>
-                                        <img src={imagem} />                                        
+                                        <img src={imagem} />
                                     </div>
                                 </div>);
                             })}
