@@ -10,7 +10,6 @@ import Input from '../Input';
 
 export default function SingIn() {
     let navigate = useNavigate();
-
     function handleSubmit(data) {
         localStorage.setItem("usuario", JSON.stringify({
             Id: 1,
