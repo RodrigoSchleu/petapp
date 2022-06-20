@@ -11,4 +11,5 @@
 } */
 .box-space-services>div{
     width: calc(50% - 10px);
+    min-width: 300px;
 }

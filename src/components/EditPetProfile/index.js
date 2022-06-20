@@ -1,13 +1,15 @@
 import './styles.css';
 
 import { Form } from '@unform/web';
-import React from 'react';
+import React, { useState } from 'react';
 
 import Button from '../Button';
 import Input from '../Input';
 import { Link } from 'react-router-dom';
 
 const EditPetProfile = () => {
+    const [pet, setPet] = useState(JSON.parse(localStorage.getItem("pet")));
+
     function handleSubmit(data) {
         alert(JSON.stringify(data))
     }
@@ -15,36 +17,36 @@ const EditPetProfile = () => {
         <main>
             <div className='main__container'>
 
-                <h1>Dados Pet</h1>
+                <h1>Editar dados do pet</h1>
                 <Form className='form' onSubmit={handleSubmit}>
                     <div className='form-group'>
                         <label>Nome</label>
-                        <Input name="name" type="text" className='input' />
+                        <Input name="name" type="text" className='input' placeholder={pet.name} disabled />
                     </div>
 
                     <div className='form-group'>
                         <label>Tipo de Animal</label>
-                        <Input name="pettype" type="text" className='input' />
+                        <Input name="type" type="text" className='input' placeholder={pet.type} disabled />
                     </div>
 
                     <div className='form-group'>
                         <label>Raça</label>
-                        <Input name="breed" type="text" className='input' />
+                        <Input name="type" type="text" className='input' placeholder={pet.type} disabled />
                     </div>
 
                     <div className='form-group'>
                         <label>Sexo</label>
-                        <Input name="sex" type="text" className='input' />
+                        <Input name="sex" type="text" className='input' placeholder={pet.sex} disabled />
                     </div>
 
                     <div className='form-group'>
                         <label>Porte</label>
-                        <Input name="size" type="text" className='input' />
+                        <Input name="size" type="text" className='input' placeholder={pet.size} disabled />
                     </div>
 
                     <div className='form-group'>
                         <label>Data de Nascimento</label>
-                        <Input name="borndate" type="date" className='input' />
+                        <Input name="borndate" type="date" className='input' placeholder={pet.borndate} disabled />
                     </div>
 
                     <div className='form-group'>

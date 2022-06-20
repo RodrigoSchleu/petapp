@@ -1,7 +1,7 @@
 import './styles.css';
 
 import { Form } from '@unform/web';
-import React, {useRef} from 'react';
+import React, { useRef } from 'react';
 
 import Button from '../Button';
 import Input from '../Input';
@@ -11,14 +11,24 @@ const CreatePet = () => {
     const formRef = useRef(null);
 
     function handleSubmit(data) {
-        var usuarioid = JSON.parse(localStorage.getItem("usuario")).Id
+        localStorage.setItem("pet", JSON.stringify({
+            Id: 1,
+            name: "Chulé",
+            type: "Cachorro",
+            breed: "SRD",
+            sex: "Macho",
+            size: "Pequeno",
+            DataDeNascimento: "20/03/1995",
+            note: "Tem alergia a amendoin"
+        }));
+        var usuarioid = JSON.parse(localStorage.getItem("pet")).Id
         data.petOwnerId = usuarioid
         alert(JSON.stringify(data))
     }
     return (
         <main>
             <div className='main__container'>
-
+                <h1>Adicionar novo Pet</h1>
                 <Form className='form' ref={formRef} onSubmit={handleSubmit}>
                     <div className='form-group'>
                         <label>Nome</label>

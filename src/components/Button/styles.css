@@ -29,9 +29,12 @@
 }
 #footer{
     background: #353535;
-    padding: 10px 15px;
+    /* padding: 10px 15px; */
     border-radius: 5px 5px 0 0;
 }
 #contratar{
-    background: #207bbd;
+    background: #1e7dc3;
+}
+#delete{
+    background: #aa1818;
 }

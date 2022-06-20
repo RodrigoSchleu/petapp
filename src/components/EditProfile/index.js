@@ -14,16 +14,16 @@ import { useState } from 'react';
 
 const EditProfile = () => {
 
-    const [usuario,setUsuario] = useState(JSON.parse(localStorage.getItem("usuario")));
+    const [usuario, setUsuario] = useState(JSON.parse(localStorage.getItem("usuario")));
 
-    const [endereco,setEndereco] = useState({
-        estado:"BA",
-        cidade:"Salvador",
-        bairro:"Pituba",
-        rua:"Alameda Florença",
-        numero:"56",
-        cep:"41830-460",
-        complemento:"Edifício Tulio, Apartamento 904"
+    const [endereco, setEndereco] = useState({
+        estado: "BA",
+        cidade: "Salvador",
+        bairro: "Pituba",
+        rua: "Alameda Florença",
+        numero: "56",
+        cep: "41830-460",
+        complemento: "Edifício Tulio, Apartamento 904"
     });
 
     function handleSubmit(data) {
@@ -33,18 +33,21 @@ const EditProfile = () => {
     return (
         <main>
             <div className='main__container'>
+                <h1>Editar Dados Pessoais</h1>
                 <Form className='form' onSubmit={handleSubmit}>
-                    <h1>Dados Pessoais</h1>
                     <div className='form-group'>
                         <label>Nome</label>
-                        <Input  name="petownername" type="text" className='input' />
+                        <Input name="petownername" type="text" className='input' />
                     </div>
 
                     <div className='form-group'>
                         <label>Sobrenome</label>
                         <Input name="lastname" type="text" className='input' />
                     </div>
-
+                    <div className='form-group'>
+                        <label>Email</label>
+                        <Input name="email" type="text" className='input' />
+                    </div>
                     <div className='form-group'>
                         <label>Telefone</label>
                         <InputMask mask="(99) 99999-9999" name="phone" type="text" className='input' />
